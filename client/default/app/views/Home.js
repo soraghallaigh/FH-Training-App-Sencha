@@ -41,13 +41,9 @@ app.views.Home = Ext.extend(Ext.Panel, {
 		  	},
 		  	{
 		  		xtype: 'button',
-		  		text:  'Map',
+		  		text:  'List View',
 		  		width:  100,
 		  		height: 100,
-
-		  		handler: function() {
-		  			app.views.viewport.setActiveItem( app.views.map );
-		  		}
 		  	},
 		  	{
 		  		xtype: 'spacer'
@@ -56,7 +52,10 @@ app.views.Home = Ext.extend(Ext.Panel, {
 		  		xtype: 'button',
 		  		text: 'Map',
 		  		width:  100,
-		  		height: 100
+		  		height: 100,
+		  		handler: function() {
+		  			app.views.viewport.setActiveItem( app.views.map );
+		  		}
 		  	},
 		  	{
 		  		xtype: 'spacer'
@@ -83,7 +82,7 @@ app.views.Home = Ext.extend(Ext.Panel, {
 		  	},
 		  	{
 		  		xtype: 'button',
-		  		text: 'Map',
+		  		text: 'Camera',
 		  		width:  100,
 		  		height: 100
 		  	},
@@ -92,7 +91,7 @@ app.views.Home = Ext.extend(Ext.Panel, {
 		  	},
 		  	{
 		  		xtype: 'button',
-		  		text: 'Map',
+		  		text: 'Twitter',
 		  		width:  100,
 		  		height: 100
 		  	},
@@ -121,7 +120,7 @@ app.views.Home = Ext.extend(Ext.Panel, {
 		  	},
 		  	{
 		  		xtype: 'button',
-		  		text: 'Map',
+		  		text: '???',
 		  		width:  100,
 		  		height: 100
 		  	},
@@ -130,7 +129,7 @@ app.views.Home = Ext.extend(Ext.Panel, {
 		  	},
 		  	{
 		  		xtype: 'button',
-		  		text: 'Map',
+		  		text: 'Webview',
 		  		width:  100,
 		  		height: 100
 		  	},
