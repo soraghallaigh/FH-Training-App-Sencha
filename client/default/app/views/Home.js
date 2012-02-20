@@ -111,7 +111,7 @@ app.views.Home = Ext.extend(Ext.Panel, {
   		height: 20
   	},
 
-  	/* ??? & Webview Buttons */
+  	/* Webview & Settings Buttons  */
   	new Ext.Panel({
   		height: 100,
 
@@ -142,7 +142,10 @@ app.views.Home = Ext.extend(Ext.Panel, {
 		  		xtype: 'button',
 		  		text: 'Settings',
 		  		width:  100,
-		  		height: 100
+		  		height: 100,
+		  		handler: function() {
+		  			app.views.viewport.setActiveItem( app.views.settings );
+		  		}
 		  	},
 		  	{
 		  		xtype: 'spacer'
