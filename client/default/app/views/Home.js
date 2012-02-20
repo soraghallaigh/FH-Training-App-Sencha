@@ -40,7 +40,7 @@ app.views.Home = Ext.extend(Ext.Panel, {
 		  	},
 		  	{
 		  		xtype: 'button',
-		  		text:  'List View',
+		  		text:  'Video',
 		  		width:  100,
 		  		height: 100,
 		  	},
@@ -122,15 +122,6 @@ app.views.Home = Ext.extend(Ext.Panel, {
 		  	},
 		  	{
 		  		xtype: 'button',
-		  		text: '???',
-		  		width:  100,
-		  		height: 100
-		  	},
-		  	{
-		  		xtype: 'spacer'
-		  	},
-		  	{
-		  		xtype: 'button',
 		  		text: 'Webview',
 		  		width:  100,
 		  		height: 100,
@@ -140,6 +131,15 @@ app.views.Home = Ext.extend(Ext.Panel, {
 		  				url: 'http://www.feedhenry.com/'
 		  			});
 		  		}
+		  	},
+		  	{
+		  		xtype: 'spacer'
+		  	},		  	
+		  	{
+		  		xtype: 'button',
+		  		text: 'Settings',
+		  		width:  100,
+		  		height: 100
 		  	},
 		  	{
 		  		xtype: 'spacer'
