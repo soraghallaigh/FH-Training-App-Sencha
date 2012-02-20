@@ -1,13 +1,10 @@
 app.views.Camera = Ext.extend(Ext.Panel, {
-  title: 'Video',
+  title: 'Camera',
   iconCls: 'home',
-  layout: 'fit',
 
   listeners: {
   	show: function() {
-  		app.views.viewport.tabBar.show();
-  		app.views.viewport.componentLayout.childrenChanged = true;
-  		app.views.viewport.doComponentLayout();
+
   	}
   },
 
@@ -29,7 +26,14 @@ app.views.Camera = Ext.extend(Ext.Panel, {
   items: [
     {
     	id: 'camera_image',
-      tpl: '<img src="{image}" width="100%" height="100%"/>'
+      tpl: '<img src="{image}" width="100%"/>'
+    },
+    {
+    	xtype: 'button',
+    	text: 'Upload Image',
+    	handler: function() {
+    		Ext.Msg.alert('Upload', 'Upload Button Handler.', Ext.emptyFn);
+    	}
     }
   ]
 });
