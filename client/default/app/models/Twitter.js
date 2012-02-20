@@ -1,5 +1,5 @@
 app.models.Twitter = Ext.regModel('app.models.Twitter', {
-  fields: ['id', 'text']
+  fields: ['id', 'text', 'profile_image_url']
 });
 
 app.stores.twitter = new Ext.data.JsonStore({
