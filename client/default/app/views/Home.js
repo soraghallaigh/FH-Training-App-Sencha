@@ -1,7 +1,6 @@
 app.views.Home = Ext.extend(Ext.Panel, {
   title: 'Home',
   iconCls: 'home',
-  scroll: false,
 
   listeners: {
   	show: function() {
@@ -131,7 +130,13 @@ app.views.Home = Ext.extend(Ext.Panel, {
 		  		xtype: 'button',
 		  		text: 'Webview',
 		  		width:  100,
-		  		height: 100
+		  		height: 100,
+		  		handler: function() {
+		  			$fh.webview({
+		  				title: 'FeedHenry',
+		  				url: 'http://www.feedhenry.com/'
+		  			});
+		  		}
 		  	},
 		  	{
 		  		xtype: 'spacer'
