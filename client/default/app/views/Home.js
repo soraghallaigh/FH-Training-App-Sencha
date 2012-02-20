@@ -1,6 +1,7 @@
 app.views.Home = Ext.extend(Ext.Panel, {
   title: 'Home',
   iconCls: 'home',
+  scroll: false,
 
   listeners: {
   	show: function() {
