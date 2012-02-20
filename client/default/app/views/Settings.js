@@ -1,10 +1,18 @@
 app.views.Settings = Ext.extend(Ext.Panel, {
   title: 'Settings',
   iconCls: 'settings',
-  layout: 'fit',
   scroll: 'vertical',
 
   listeners: {
+    beforeshow: function() {
+      // Load settings from local storage
+      $fh.data({
+        act: 'load',
+        key: 'settings'
+      }, function(res) {
+        console.log(res);
+      });
+    },
   	show: function() {
   		app.views.viewport.tabBar.show();
   		app.views.viewport.componentLayout.childrenChanged = true;
@@ -42,6 +50,7 @@ app.views.Settings = Ext.extend(Ext.Panel, {
           items: [
             {
               xtype: 'selectfield',
+              id: 'title',
               name: 'title',
               label: 'Title',
               options: [{
@@ -57,6 +66,7 @@ app.views.Settings = Ext.extend(Ext.Panel, {
             },
             {
               xtype: 'textfield',
+              id: 'name',
               name:  'name',
               label: 'Name'
             }
@@ -72,6 +82,7 @@ app.views.Settings = Ext.extend(Ext.Panel, {
           items: [
             {
               xtype: 'togglefield',
+              id: 'toggle',
               name: 'enable',
               label: 'Toggle Switch'
             }
@@ -87,8 +98,12 @@ app.views.Settings = Ext.extend(Ext.Panel, {
               xtype: 'button',
               text: 'Save Settings',
               width: '80%',
+              height: '100%',
               handler: function() {
-                alert(1);
+                Ext.dispatch({
+                  controller: app.controllers.settings,
+                  action: 'updateSettings'
+                });
               }
             }
           ]          
