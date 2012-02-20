@@ -1,6 +1,6 @@
 app.views.Settings = Ext.extend(Ext.Panel, {
   title: 'Settings',
-  iconCls: 'home',
+  iconCls: 'settings',
   layout: 'fit',
 
   listeners: {
