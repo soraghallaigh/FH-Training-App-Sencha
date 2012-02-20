@@ -4,6 +4,7 @@ app.models.Twitter = Ext.regModel('app.models.Twitter', {
 
 app.stores.twitter = new Ext.data.Store({
   model: 'app.models.Twitter',
+  autoLoad:true,
   proxy: {
     type: 'ajax',
     url : 'http://api.twitter.com/1/statuses/user_timeline/feedhenry.json?callback=?',
