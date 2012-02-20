@@ -2,6 +2,7 @@ app.views.Settings = Ext.extend(Ext.Panel, {
   title: 'Settings',
   iconCls: 'settings',
   layout: 'fit',
+  scroll: 'vertical',
 
   listeners: {
   	show: function() {
