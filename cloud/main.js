@@ -1,18 +1,9 @@
-function getCountries(){
-  var data = [
-  {
-    name: 'Ireland',
-    data: 123
-  },
-  {
-    name: 'UK', 
-    data: 456
-  }
-  ];
-  return data;
-}
+function getTweets() {
+  var username = 'feedhenry';
+  var url      = 'http://api.twitter.com/1/statuses/user_timeline/' + username + '.json?callback=?';
 
-function getMoreCountries(){
-  // returns the global in shared
-  return countries;
+  return $fh.web({
+    url: url,
+    method: 'GET'
+  });
 }
