@@ -1,6 +1,7 @@
 app.views.Camera = Ext.extend(Ext.Panel, {
   title: 'Camera',
   iconCls: 'home',
+  layout: 'fit',
 
   listeners: {
   	show: function() {
