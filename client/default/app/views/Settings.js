@@ -4,17 +4,16 @@ app.views.Settings = Ext.extend(Ext.Panel, {
   scroll: 'vertical',
 
   listeners: {
-    beforeshow: function() {
+  	show: function() {
+  		app.views.viewport.tabBar.show();
+  		app.views.viewport.componentLayout.childrenChanged = true;
+  		app.views.viewport.doComponentLayout();
+
       // Load settings from local storage
       Ext.dispatch({
         controller: app.controllers.settings,
         action: 'loadSettings'
       });
-    },
-  	show: function() {
-  		app.views.viewport.tabBar.show();
-  		app.views.viewport.componentLayout.childrenChanged = true;
-  		app.views.viewport.doComponentLayout();
   	}
   },
 
