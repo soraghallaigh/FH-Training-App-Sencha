@@ -21,20 +21,26 @@ app.views.Camera = Ext.extend(Ext.Panel, {
   				}
   			}
   		]
-  	}
+  	},
+    {
+      dock: 'bottom',
+      items: [
+        {
+          xtype: 'button',
+          text: 'Upload Image',
+          handler: function() {
+            Ext.Msg.alert('Upload', 'Upload Button Handler.', Ext.emptyFn);
+          }
+        }
+      ]
+    }
   ],
   
   items: [
     {
     	id: 'camera_image',
-      tpl: '<img src="{image}" width="100%"/>'
+      tpl: '<img src="{image}" width="100%" height="100%"/>'
     },
-    {
-    	xtype: 'button',
-    	text: 'Upload Image',
-    	handler: function() {
-    		Ext.Msg.alert('Upload', 'Upload Button Handler.', Ext.emptyFn);
-    	}
-    }
+    
   ]
 });
