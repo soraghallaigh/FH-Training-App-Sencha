@@ -83,7 +83,7 @@ app.views.Settings = Ext.extend(Ext.Panel, {
               id: 'slider',
               name: 'value',
               label: 'Value'
-            }
+            },
             {
               xtype: 'togglefield',
               id: 'toggle',
