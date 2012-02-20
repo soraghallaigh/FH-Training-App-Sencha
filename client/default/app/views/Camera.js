@@ -11,7 +11,7 @@ app.views.Camera = Ext.extend(Ext.Panel, {
         {
           text: 'Back',
           handler: function() {
-            app.views.viewport.setActiveItem(app.views.home);
+            app.views.viewport.setActiveItem(app.views.tabPanel);
           }
         }
       ]
