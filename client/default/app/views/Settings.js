@@ -8,7 +8,7 @@ app.views.Settings = Ext.extend(Ext.Panel, {
       // Load settings from local storage
       Ext.dispatch({
         controller: app.controllers.settings,
-        action: 'saveSettings'
+        action: 'loadSettings'
       });
     },
   	show: function() {
@@ -106,7 +106,7 @@ app.views.Settings = Ext.extend(Ext.Panel, {
               handler: function() {
                 Ext.dispatch({
                   controller: app.controllers.settings,
-                  action: 'updateSettings'
+                  action: 'saveSettings'
                 });
               }
             }
