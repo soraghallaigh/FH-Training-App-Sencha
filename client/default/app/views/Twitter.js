@@ -1,6 +1,3 @@
-// http://api.twitter.com/1/statuses/user_timeline/feedhenry.json?callback=?
-// $fh.act({act: 'getTweets', req:{}}, function(res) { console.log(res); app.stores.twitter.loadData(JSON.parse(res.body)); });
-
 app.views.Twitter = Ext.extend(Ext.Panel, {
   title: 'Twitter',
   iconCls: 'home',
@@ -38,7 +35,12 @@ app.views.Twitter = Ext.extend(Ext.Panel, {
   	new Ext.List({
   		id: 'list',
   		store: app.stores.twitter,
-  		itemTpl: '{text}'
+  		itemTpl: '{text}',
+      grouped: false,
+      scroll: 'vertical',
+      fullscreen: true
+    }],
+
   	})
   ]
 });
