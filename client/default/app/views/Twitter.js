@@ -37,8 +37,7 @@ app.views.Twitter = Ext.extend(Ext.Panel, {
       store: app.stores.twitter,
       itemTpl: '{text}',
       grouped: false,
-      scroll: 'vertical',
-      fullscreen: true
+      scroll: 'vertical'
   	})
   ]
 });
