@@ -28,7 +28,7 @@ app.views.Video = Ext.extend(Ext.Panel, {
   
   items: [
     {
-      html: '<iframe width="420" height="315" src="http://www.youtube.com/embed/3VTLPXpIMT0" frameborder="0" allowfullscreen></iframe>'
+      html: '<iframe width="100%" height="100%" src="http://www.youtube.com/embed/3VTLPXpIMT0" frameborder="0" allowfullscreen></iframe>'
     }
   ]
 });
