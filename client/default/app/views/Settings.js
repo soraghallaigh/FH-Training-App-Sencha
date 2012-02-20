@@ -6,11 +6,9 @@ app.views.Settings = Ext.extend(Ext.Panel, {
   listeners: {
     beforeshow: function() {
       // Load settings from local storage
-      $fh.data({
-        act: 'load',
-        key: 'settings'
-      }, function(res) {
-        console.log(res);
+      Ext.dispatch({
+        controller: app.controllers.settings,
+        action: 'loadSettings'
       });
     },
   	show: function() {
@@ -80,6 +78,12 @@ app.views.Settings = Ext.extend(Ext.Panel, {
             labelWidth: '30%'
           },
           items: [
+            {
+              xtype: 'sliderfield',
+              id: 'slider',
+              name: 'value',
+              label: 'Value'
+            }
             {
               xtype: 'togglefield',
               id: 'toggle',
