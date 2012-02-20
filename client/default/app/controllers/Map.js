@@ -21,6 +21,9 @@ app.controllers.map = new Ext.Controller({
       pos = new google.maps.LatLng(res.lat, res.lon);
       map.setCenter(pos);
 
+      // Remove any previously created markers
+      this.clearMarkers();
+
       // Create a marker
       this.markers.push(new google.maps.Marker({
         position: pos,        
