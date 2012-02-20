@@ -15,7 +15,22 @@ app.views.Home = Ext.extend(Ext.Panel, {
   		dock: 'top',
   		xtype: 'toolbar',
   		items: [
-  			
+  			{
+  				xtype: 'panel',
+  				title: 'FeedHenry'
+  				/*
+  				xtype: 'panel',
+  				layout: {
+			      type: 'hbox',
+			      pack: 'center',  
+			    },
+			    items: [
+			    	{
+	  					html: '<img src="app/images/logo.png"/>'
+  					}
+			    ]  
+			    */			
+  			}
   		]
   	}
   ],
@@ -86,7 +101,13 @@ app.views.Home = Ext.extend(Ext.Panel, {
 		  		xtype: 'button',
 		  		text: 'Camera',
 		  		width:  100,
-		  		height: 100
+		  		height: 100,
+		  		handler: function() {
+		  			Ext.dispatch({
+			        controller: app.controllers.camera,
+			        action: 'openCamera'
+			      });
+		  		}
 		  	},
 		  	{
 		  		xtype: 'spacer'
