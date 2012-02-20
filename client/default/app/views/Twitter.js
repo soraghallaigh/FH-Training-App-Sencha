@@ -33,14 +33,12 @@ app.views.Twitter = Ext.extend(Ext.Panel, {
   
   items: [
   	new Ext.List({
-  		id: 'list',
-  		store: app.stores.twitter,
-  		itemTpl: '{text}',
+      id: 'list',
+      store: app.stores.twitter,
+      itemTpl: '{text}',
       grouped: false,
       scroll: 'vertical',
       fullscreen: true
-    }],
-
   	})
   ]
 });
