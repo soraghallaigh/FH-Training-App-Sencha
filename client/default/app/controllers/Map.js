@@ -22,10 +22,10 @@ app.controllers.map = new Ext.Controller({
       map.setCenter(pos);
 
       // Remove any previously created markers
-      this.clearMarkers();
+      app.controllers.map.clearMarkers();
 
       // Create a marker
-      this.markers.push(new google.maps.Marker({
+      app.controllers.map.markers.push(new google.maps.Marker({
         position: pos,        
         map: map,
         icon: 'http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=A|FF0000|000000'
