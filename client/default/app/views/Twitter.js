@@ -10,6 +10,20 @@ app.views.Twitter = Ext.extend(Ext.Panel, {
   		app.views.viewport.tabBar.show();
   		app.views.viewport.componentLayout.childrenChanged = true;
   		app.views.viewport.doComponentLayout();
+
+  		// Display a loading spinner
+  		mask.show();
+
+  		$fh.act({act: 'getTweets', req:{}}, function(res) { 
+	  		var tweets = JSON.parse(res.body);
+
+	  		if (typeof tweets !== "undefined") {
+	  			app.stores.twitter.loadData(tweets);
+	  		} 
+
+	  		// Hide the loading the spinner
+	  		mask.hide();
+	  	});	
   	}
   },
 
