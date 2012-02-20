@@ -21,12 +21,14 @@ app.views.Viewport = Ext.extend(Ext.TabPanel, {
         map: new app.views.MapView(),
         twitter: new app.views.Twitter(),
         camera: new app.views.Camera(),
+        video: new app.views.Video()
       });
 
       //put instances of cards into viewport
       Ext.apply(this, {
         items: [
           app.views.home,
+          app.views.video,
           app.views.twitter,
           app.views.map,
           {
