@@ -21,7 +21,8 @@ app.views.Viewport = Ext.extend(Ext.TabPanel, {
         map: new app.views.MapView(),
         twitter: new app.views.Twitter(),
         camera: new app.views.Camera(),
-        video: new app.views.Video()
+        video: new app.views.Video(),
+        settings: new app.views.Settings()
       });
 
       //put instances of cards into viewport
@@ -31,16 +32,7 @@ app.views.Viewport = Ext.extend(Ext.TabPanel, {
           app.views.video,
           app.views.twitter,
           app.views.map,
-          {
-            title: '???',
-            iconCls: 'home',
-            
-            listeners: {
-              show: function() {
-                
-              }
-            }
-          },
+          app.views.settings
         ]
       });
       app.views.Viewport.superclass.initComponent.apply(this, arguments);
