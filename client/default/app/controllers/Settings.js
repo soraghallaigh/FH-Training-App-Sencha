@@ -12,6 +12,7 @@ app.controllers.settings = new Ext.Controller({
       Ext.getCmp('title' ).setValue(settings.title);
       Ext.getCmp('name'  ).setValue(settings.fullname);
       Ext.getCmp('toggle').setValue(settings.toggle);
+      Ext.getCmp('slider').setValue(settings.slider);
     });
   },
 
@@ -20,7 +21,7 @@ app.controllers.settings = new Ext.Controller({
       title:    Ext.getCmp('title').getValue(),
       fullname: Ext.getCmp('name').getValue(),
       toggle:   Ext.getCmp('toggle').getValue(),
-      //slider:   
+      slider:   Ext.getCmp('slider').getValue()
     };
 
     // Save to local storage
