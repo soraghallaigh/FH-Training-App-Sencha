@@ -16,7 +16,7 @@ app.controllers.settings = new Ext.Controller({
     });
   },
 
-  updateSettings: function() {
+  saveSettings: function() {
     var settings = {
       title:    Ext.getCmp('title').getValue(),
       fullname: Ext.getCmp('name').getValue(),
