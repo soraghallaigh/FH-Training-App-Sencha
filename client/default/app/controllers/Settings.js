@@ -7,7 +7,7 @@ app.controllers.settings = new Ext.Controller({
     }, function(res) {
       if (res.val === null) return;
 
-      var settings = res.val;
+      var settings = JSON.parse(res.val);
 
       Ext.getCmp('title' ).setValue(settings.title);
       Ext.getCmp('name'  ).setValue(settings.fullname);
