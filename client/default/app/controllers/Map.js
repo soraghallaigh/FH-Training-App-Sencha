@@ -8,6 +8,8 @@ app.controllers.map = new Ext.Controller({
 
     }, function() {
       // We failed to get the users geolocation, fallback to geo ip
+      console.log("$fh.geo failed.");
+      
       $fh.geoip(function(res) { 
         console.log(JSON.stringify(res.geoip)); 
       });
