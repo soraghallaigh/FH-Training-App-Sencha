@@ -1,6 +1,9 @@
 app.controllers.map = new Ext.Controller({
 
   getLocation: function(options){
+    // Instance of the google map
+    var map = app.views.map.map;
+
     $fh.geo({
       interval: 0
     }, function(res){
@@ -9,7 +12,7 @@ app.controllers.map = new Ext.Controller({
     }, function() {
       // We failed to get the users geolocation, fallback to geo ip
       console.log("$fh.geo failed.");
-      
+
       $fh.geoip(function(res) { 
         console.log(JSON.stringify(res.geoip)); 
       });

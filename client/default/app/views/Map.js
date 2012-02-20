@@ -1,3 +1,11 @@
+app.views.map = new Ext.Map({
+  title: 'Map',
+  mapOptions: {
+    zoom: 15,
+    center: new google.maps.LatLng(52.262852,-7.115364),
+  },
+});
+
 app.views.MapView = Ext.extend(Ext.Panel, {
   title: 'Map',
   iconCls: 'home',
@@ -34,12 +42,6 @@ app.views.MapView = Ext.extend(Ext.Panel, {
   ],
   
   items: [
-  	new Ext.Map({
-      title: 'Map',
-      mapOptions: {
-        zoom: 15,
-        center: new google.maps.LatLng(52.262852,-7.115364),
-      },
-    })
+  	app.views.map
   ]
 });
