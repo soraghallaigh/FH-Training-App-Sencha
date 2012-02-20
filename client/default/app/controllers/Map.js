@@ -8,7 +8,7 @@ app.controllers.map = new Ext.Controller({
     $fh.geo({
       interval: 0
     }, function(res){
-      pos = new google.maps.LatLng(res.lat, res.lat);
+      pos = new google.maps.LatLng(res.lat, res.lon);
       map.setCenter(pos);
     }, function() {
       // We failed to get the users geolocation, fallback to geo ip
