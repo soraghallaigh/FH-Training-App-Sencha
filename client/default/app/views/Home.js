@@ -26,7 +26,7 @@ app.views.Home = Ext.extend(Ext.Panel, {
   		height: 20
   	},
 
-  	/* List View & Google Maps Buttons */
+  	/* Video & Google Maps Buttons */
   	new Ext.Panel({
   		height: 100,
 
@@ -43,6 +43,9 @@ app.views.Home = Ext.extend(Ext.Panel, {
 		  		text:  'Video',
 		  		width:  100,
 		  		height: 100,
+		  		handler: function() {
+		  			app.views.viewport.setActiveItem( app.views.video );
+		  		}
 		  	},
 		  	{
 		  		xtype: 'spacer'
