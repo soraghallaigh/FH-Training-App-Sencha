@@ -6,6 +6,7 @@ function getTweets() {
 
   return $fh.web({
     url: url,
-    method: 'GET'
+    method: 'GET',
+    allowSelfSignedCert: true
   });
 }
