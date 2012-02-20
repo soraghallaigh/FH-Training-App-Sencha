@@ -8,7 +8,7 @@ app.controllers.twitter = new Ext.Controller({
       var tweets = JSON.parse(res.body);
 
       if (typeof tweets !== "undefined") {
-        app.stores.twitter.loadData(tweets);
+        app.stores.twitter.loadData(tweets.results);
       } 
 
       // Hide the loading the spinner
