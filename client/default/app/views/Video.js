@@ -1,5 +1,5 @@
 app.views.Video = Ext.extend(Ext.Panel, {
-  title: 'Twitter',
+  title: 'Video',
   iconCls: 'home',
   layout: 'fit',
 
@@ -27,6 +27,8 @@ app.views.Video = Ext.extend(Ext.Panel, {
   ],
   
   items: [
-
+    {
+      html: '<iframe width="420" height="315" src="http://www.youtube.com/embed/3VTLPXpIMT0" frameborder="0" allowfullscreen></iframe>'
+    }
   ]
 });
