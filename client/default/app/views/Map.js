@@ -1,3 +1,4 @@
+/*
 app.views.map = new Ext.Map({
   fullscreen: true,
   layout: 'fit',
@@ -8,6 +9,8 @@ app.views.map = new Ext.Map({
     //center: new google.maps.LatLng(52.262852,-7.115364),
   },
 });
+*/
+app.views.map = {};
 
 app.views.MapView = Ext.extend(Ext.Panel, {
   title: 'Map',
@@ -15,6 +18,18 @@ app.views.MapView = Ext.extend(Ext.Panel, {
   layout: 'fit',
 
   listeners: {
+    beforeshow: function() {
+      app.views.map = new Ext.Map({
+        fullscreen: true,
+        layout: 'fit',
+        id: 'map',
+        title: 'Map',
+        mapOptions: {
+          zoom: 15,
+          //center: new google.maps.LatLng(52.262852,-7.115364),
+        },
+      });
+    },
   	show: function() {
       // Update UI
   		app.views.tabPanel.tabBar.show();
