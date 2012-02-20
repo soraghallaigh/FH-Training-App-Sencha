@@ -32,7 +32,7 @@ app.views.Twitter = Ext.extend(Ext.Panel, {
   	new Ext.List({
   		id: 'list',
   		store: app.stores.twitter,
-  		itemTpl: '<b>test</b>'
+  		itemTpl: '{text}'
   	})
   ]
 });

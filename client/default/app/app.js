@@ -10,3 +10,7 @@ Ext.regApplication({
     }
 });
 
+// Loading Spinner
+var mask = new Ext.LoadMask(Ext.getBody(), {
+  msg: "Loading Data"
+});
