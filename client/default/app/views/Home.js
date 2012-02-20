@@ -92,7 +92,10 @@ app.views.Home = Ext.extend(Ext.Panel, {
 		  		xtype: 'button',
 		  		text: 'Twitter',
 		  		width:  100,
-		  		height: 100
+		  		height: 100,
+		  		handler: function() {
+		  			app.views.viewport.setActiveItem( app.views.twitter );
+		  		}
 		  	},
 		  	{
 		  		xtype: 'spacer'
