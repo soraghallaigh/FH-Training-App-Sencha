@@ -5,9 +5,9 @@ app.views.Settings = Ext.extend(Ext.Panel, {
 
   listeners: {
   	show: function() {
-  		app.views.viewport.tabBar.show();
-  		app.views.viewport.componentLayout.childrenChanged = true;
-  		app.views.viewport.doComponentLayout();
+  		app.views.tabPanel.tabBar.show();
+  		app.views.tabPanel.componentLayout.childrenChanged = true;
+  		app.views.tabPanel.doComponentLayout();
 
       // Load settings from local storage
       Ext.dispatch({
@@ -25,7 +25,7 @@ app.views.Settings = Ext.extend(Ext.Panel, {
   			{
   				text: 'Back',
   				handler: function() {
-  					app.views.viewport.setActiveItem(app.views.home);
+  					app.views.tabPanel.setActiveItem(app.views.home);
   				}
   			}
   		]

@@ -3,33 +3,15 @@ app.views.Camera = Ext.extend(Ext.Panel, {
   iconCls: 'home',
   layout: 'fit',
 
-  listeners: {
-  	show: function() {
-
-  	}
-  },
-
   dockedItems: [
-  	{
-  		dock: 'top',
-  		xtype: 'toolbar',
-  		items: [
-  			{
-  				text: 'Back',
-  				handler: function() {
-  					app.views.viewport.setActiveItem(app.views.home);
-  				}
-  			}
-  		]
-  	},
     {
-      dock: 'bottom',
+      dock: 'top',
+      xtype: 'toolbar',
       items: [
         {
-          xtype: 'button',
-          text: 'Upload Image',
+          text: 'Back',
           handler: function() {
-            Ext.Msg.alert('Upload', 'Upload Button Handler.', Ext.emptyFn);
+            app.views.viewport.setActiveItem(0);
           }
         }
       ]
@@ -38,9 +20,7 @@ app.views.Camera = Ext.extend(Ext.Panel, {
   
   items: [
     {
-    	id: 'camera_image',
-      tpl: '<img src="{image}" width="100%" height="100%"/>'
-    },
-    
+      html: '<b>test</b>'
+    }
   ]
 });

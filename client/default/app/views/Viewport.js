@@ -1,43 +1,33 @@
-app.views.Viewport = Ext.extend(Ext.TabPanel, {
+app.views.Viewport = Ext.extend(Ext.Panel, {
   fullscreen: true,
   ui: 'light',
+  layout: 'card',
 
-  tabBar: {
-    dock: 'bottom',
-    layout: {
-      pack: 'center'
-    },
-    hidden: true
-  },  
   cardSwitchAnimation: {
     type: 'slide',
     cover: true
   },
 
   initComponent: function() {
-      // Put instances of cards into app.views namespace
-      Ext.apply(app.views, {
-        home: new app.views.Home(),
-        map: new app.views.MapView(),
-        twitter: new app.views.Twitter(),
-        camera: new app.views.Camera(),
-        video: new app.views.Video(),
-        settings: new app.views.Settings()
-      });
-
-      // Put instances of cards into viewport
-      Ext.apply(this, {
-        items: [
-          app.views.home,
-          app.views.video,
-          app.views.twitter,
-          app.views.map,
-          app.views.settings
-        ]
-      });
-      app.views.Viewport.superclass.initComponent.apply(this, arguments);
-  },
-  layoutOrientation : function(orientation, w, h) {
-    app.views.Viewport.superclass.layoutOrientation.call(this, orientation, w, h);        
+    // Put instances of cards into app.views namespace
+    Ext.apply(app.views, {
+      home:     new app.views.Home(),
+      map:      new app.views.MapView(),
+      twitter:  new app.views.Twitter(),        
+      video:    new app.views.Video(),
+      settings: new app.views.Settings(),
+      camera:   new app.views.Camera()
+    });
+    Ext.apply(app.views, {
+      tabPanel: new app.views.TabPanel()
+    });
+    Ext.apply(this, {
+      items: [
+        app.views.tabPanel,
+        app.views.camera
+      ]
+    });
+    app.views.Viewport.superclass.initComponent.apply(this, arguments);
   }
+
 });

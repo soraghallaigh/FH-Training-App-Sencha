@@ -3,10 +3,10 @@ app.views.Home = Ext.extend(Ext.Panel, {
   iconCls: 'home',
 
   listeners: {
-  	show: function() {
-  		app.views.viewport.tabBar.hide();
-  		app.views.viewport.componentLayout.childrenChanged = true;
-  		app.views.viewport.doComponentLayout();
+  	beforeshow: function() {
+  		app.views.tabPanel.tabBar.hide();
+  		app.views.tabPanel.componentLayout.childrenChanged = true;
+  		app.views.tabPanel.doComponentLayout();
   	}
   },
 
@@ -17,19 +17,7 @@ app.views.Home = Ext.extend(Ext.Panel, {
   		items: [
   			{
   				xtype: 'panel',
-  				title: 'FeedHenry'
-  				/*
-  				xtype: 'panel',
-  				layout: {
-			      type: 'hbox',
-			      pack: 'center',  
-			    },
-			    items: [
-			    	{
-	  					html: '<img src="app/images/logo.png"/>'
-  					}
-			    ]  
-			    */			
+  				title: 'FeedHenry'			
   			}
   		]
   	}
@@ -59,7 +47,7 @@ app.views.Home = Ext.extend(Ext.Panel, {
 		  		width:  100,
 		  		height: 100,
 		  		handler: function() {
-		  			app.views.viewport.setActiveItem( app.views.video );
+		  			app.views.tabPanel.setActiveItem( app.views.video );
 		  		}
 		  	},
 		  	{
@@ -71,7 +59,7 @@ app.views.Home = Ext.extend(Ext.Panel, {
 		  		width:  100,
 		  		height: 100,
 		  		handler: function() {
-		  			app.views.viewport.setActiveItem( app.views.map );
+		  			app.views.tabPanel.setActiveItem( app.views.map );
 		  		}
 		  	},
 		  	{
@@ -103,10 +91,13 @@ app.views.Home = Ext.extend(Ext.Panel, {
 		  		width:  100,
 		  		height: 100,
 		  		handler: function() {
+		  			app.views.viewport.setActiveItem( app.views.camera );
+		  			/*
 		  			Ext.dispatch({
 			        controller: app.controllers.camera,
 			        action: 'openCamera'
 			      });
+			      */
 		  		}
 		  	},
 		  	{
@@ -118,7 +109,7 @@ app.views.Home = Ext.extend(Ext.Panel, {
 		  		width:  100,
 		  		height: 100,
 		  		handler: function() {
-		  			app.views.viewport.setActiveItem( app.views.twitter );
+		  			app.views.tabPanel.setActiveItem( app.views.twitter );
 		  		}
 		  	},
 		  	{
@@ -165,7 +156,7 @@ app.views.Home = Ext.extend(Ext.Panel, {
 		  		width:  100,
 		  		height: 100,
 		  		handler: function() {
-		  			app.views.viewport.setActiveItem( app.views.settings );
+		  			app.views.tabPanel.setActiveItem( app.views.settings );
 		  		}
 		  	},
 		  	{
