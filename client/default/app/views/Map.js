@@ -27,15 +27,11 @@ app.views.MapView = Ext.extend(Ext.Panel, {
   
   items: [
   	new Ext.Map({
-  		mapOptions : {
-        zoom: 10,
-        //mapTypeId : google.maps.MapTypeId.HYBRID,
-        mapTypeId: google.maps.MapTypeId.ROADMAP,
-        navigationControl: false,
-        navigationControlOptions: {
-          style: google.maps.NavigationControlStyle.DEFAULT
-        }
+      title: 'Map',
+      mapOptions: {
+        zoom: 15,
+        center: new google.maps.LatLng(52.262852,-7.115364),
       },
-  	})
+    })
   ]
 });

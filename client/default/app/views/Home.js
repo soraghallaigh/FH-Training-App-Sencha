@@ -5,6 +5,8 @@ app.views.Home = Ext.extend(Ext.Panel, {
   listeners: {
   	show: function() {
   		app.views.viewport.tabBar.hide();
+  		app.views.viewport.componentLayout.childrenChanged = true;
+  		app.views.viewport.doComponentLayout();
   	}
   },
 
