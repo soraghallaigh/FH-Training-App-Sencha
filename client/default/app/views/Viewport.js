@@ -32,8 +32,8 @@ app.views.Viewport = Ext.extend(Ext.TabPanel, {
 
     Ext.apply(this, {
       items: [
-        app.views.map,
         app.views.twitter,
+        app.views.map,      
         app.views.payment,
         app.views.settings,
         /*
