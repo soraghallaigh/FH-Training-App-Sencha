@@ -4,7 +4,7 @@ app.hideBack = true;
 app.views.Viewport = Ext.extend(Ext.TabPanel, {
   fullscreen: true,
   ui: 'light',
-  layout: 'card',
+  layout: 'fit',
 
   cardSwitchAnimation: {
     type: 'slide',
