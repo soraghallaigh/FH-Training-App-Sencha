@@ -67,7 +67,7 @@ function getPoints() {
     // Parse the cached data
     cache = $fh.parse(cache);
 
-    if( $params.hash && $params.hash === cached.hash ) {
+    if( $params.hash && $params.hash === cache.hash ) {
       // Client data is up to date
       response = {'hash':$params.hash, 'cached':true};
     } else {
