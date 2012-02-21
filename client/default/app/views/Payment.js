@@ -61,7 +61,7 @@ app.views.Payment = Ext.extend(Ext.Panel, {
         },
         {
           xtype: 'button',
-          text: 'Process Payment',
+          text: 'Validate Card Number',
           handler: function() {
             Ext.dispatch({
               controller: app.controllers.payment,
