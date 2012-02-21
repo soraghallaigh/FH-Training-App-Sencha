@@ -41,7 +41,7 @@ app.controllers.map = new Ext.Controller({
     var pos = {};
 
     // Show loading spinner
-    mark.show();
+    mask.show();
 
     $fh.geo({
       interval: 0
