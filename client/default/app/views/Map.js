@@ -48,6 +48,6 @@ app.views.MapView = Ext.extend(Ext.Panel, {
   ],
   
   items: [
-  	app.views.map
+  	//app.views.map
   ]
 });
