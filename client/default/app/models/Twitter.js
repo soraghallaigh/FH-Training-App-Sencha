@@ -1,13 +1,13 @@
 app.models.Twitter = Ext.regModel('app.models.Twitter', {
-  fields: ['id', 'text', 'profile_image_url']
+  fields: ['from_user', 'text', 'profile_image_url', 'from_user_name'],
+  proxy: {
+    type: 'fhact',
+    reader: 'json',
+    id: 'getTweets'
+  }
 });
 
 app.stores.twitter = new Ext.data.JsonStore({
   model: 'app.models.Twitter',
-  
-  /*
-  getGroupString: function(record){
-    return record.get('id')[0];
-  }
-  */
+  autoLoad: true,
 });

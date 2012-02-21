@@ -10,20 +10,20 @@ app.views.Twitter = Ext.extend(Ext.Panel, {
   },
 
   dockedItems: [
-  	{
-  		dock: 'top',
-  		xtype: 'toolbar',
+    {
+      dock: 'top',
+      xtype: 'toolbar',
       title: '<img style="margin-top: 5px;" src="app/images/logo.png" />',
-  		items: [
-  			{
-  				text: 'Back',
+      items: [
+        {
+          text: 'Back',
           hidden: app.hideBack || false,
-  				handler: function() {
-  					app.views.viewport.setActiveItem(app.views.home);
-  				}
-  			}
-  		]
-  	}
+          handler: function() {
+            app.views.tabPanel.setActiveItem(app.views.home);
+          }
+        }
+      ]
+    }
   ],
   
   items: [
