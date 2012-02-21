@@ -21,7 +21,7 @@ app.controllers.map = new Ext.Controller({
         app.controllers.map.getPoints();
       } else {
         // Parse the cached data
-        var cache = JSON.parse(res);
+        var cache = JSON.parse(res.val);
         var hash  = cache.hash;
 
         app.controllers.map.getPoints(cache, hash);
