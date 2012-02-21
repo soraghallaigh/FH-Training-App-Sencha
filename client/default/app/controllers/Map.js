@@ -56,6 +56,9 @@ app.controllers.map = new Ext.Controller({
           icon: 'http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=' + (i+1) + '|FF0000|000000'
         })); 
       }
+
+      // Hide the loading spinner
+      mask.hide();
     });
   },
 
