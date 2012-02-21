@@ -28,6 +28,7 @@ app.controllers.map = new Ext.Controller({
   },
 
   getPoints: function(cache, hash) {
+    var map = Ext.getCmp("map").map;
     $fh.act({
       act: 'getPoints',
       req: {
@@ -43,6 +44,7 @@ app.controllers.map = new Ext.Controller({
           val: JSON.stringify(res)
         });
       }
+      var map = Ext.getCmp("map").map;
 
       for (var i = 0; i < res.data.locations.length; i++) {
         var point = res.data.locations[i];
