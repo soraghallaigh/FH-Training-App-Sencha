@@ -68,9 +68,12 @@ app.views.Viewport = Ext.extend(Ext.TabPanel, {
         type: 'slide',
         cover: true
     },
+    /*
     defaults: {
         scroll: 'vertical'
     },
+    */
+    
     initComponent: function() {
         //put instances of cards into app.views namespace
         Ext.apply(app.views, {
