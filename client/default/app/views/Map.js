@@ -29,18 +29,18 @@ app.views.MapView = Ext.extend(Ext.Panel, {
           //center: new google.maps.LatLng(52.262852,-7.115364),
         },
       });
-    },
-  	show: function() {
-      // Update UI
-  		app.views.tabPanel.tabBar.show();
-      app.views.tabPanel.componentLayout.childrenChanged = true;
-      app.views.tabPanel.doComponentLayout();
 
       // Get the users location
       Ext.dispatch({
         controller: app.controllers.map,
         action: 'getLocation'
       });
+    },
+  	show: function() {
+      // Update UI
+  		app.views.tabPanel.tabBar.show();
+      app.views.tabPanel.componentLayout.childrenChanged = true;
+      app.views.tabPanel.doComponentLayout();
   	}
   },
 
