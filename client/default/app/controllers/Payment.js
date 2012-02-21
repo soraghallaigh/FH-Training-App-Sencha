@@ -19,7 +19,7 @@ app.controllers.payment = new Ext.Controller({
         cardNumber: cardNumber
       }
     }, function(res) {
-      alert(res);
+      alert(JSON.stringify(res));
       console.log(res);
 
       var regEx  = new RegExp("<\s*string[^>]*>(.*?)<\s*/\s*string>", "g");
