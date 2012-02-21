@@ -5,6 +5,7 @@ app.controllers.twitter = new Ext.Controller({
     mask.show();
 
     $fh.act({act: 'getTweets', req:{}}, function(res) { 
+      alert(res);
       var tweets = JSON.parse(res.body);
 
       if (typeof tweets !== "undefined") {
