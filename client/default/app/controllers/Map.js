@@ -23,7 +23,7 @@ app.controllers.map = new Ext.Controller({
           app.controllers.map.markers.push(new google.maps.Marker({
             position: pos,        
             map: map,
-            icon: 'http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=A|FF0000|000000'
+            icon: 'http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=' + (i+1) + '|FF0000|000000'
           })); 
         }
       }
@@ -55,7 +55,7 @@ app.controllers.map = new Ext.Controller({
       app.controllers.map.markers.push(new google.maps.Marker({
         position: pos,        
         map: map,
-        icon: 'http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=A|FF0000|000000'
+        icon: 'http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=0|FF0000|000000'
       }));  
 
       // Get markers from the cloud
