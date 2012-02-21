@@ -44,8 +44,8 @@ app.controllers.map = new Ext.Controller({
         });
       }
 
-      for (var i = 0; i < res.locations.length; i++) {
-        var point = res.locations[i];
+      for (var i = 0; i < res.data.locations.length; i++) {
+        var point = res.data.locations[i];
         var pos   = new google.maps.LatLng(point.lat, point.lon);
 
         app.controllers.map.markers.push(new google.maps.Marker({
