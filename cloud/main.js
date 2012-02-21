@@ -12,9 +12,9 @@ function getTweets() {
     allowSelfSignedCert: true
   });
   //var res = $fh.stringify({response: response.body});
-  var res = $fh.parse(response.body);
+  // var res = $fh.parse(response.body);
 
-  return {'data': res.results};
+  return {'data': $fh.parse(response.body).results};
 }
 
 /*
