@@ -24,8 +24,7 @@ app.views.MapView = Ext.extend(Ext.Panel, {
         title: 'Map',
         mapOptions: {
           zoom: 15,
-        },
-        hidden: true
+        }
       });
       /*
       Ext.dispatch({
