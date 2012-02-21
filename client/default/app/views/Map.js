@@ -5,8 +5,7 @@ app.views.map = new Ext.Map({
   title: 'Map',
   mapOptions: {
     zoom: 15,
-  },
-  hidden: true
+  }
 });
 
 app.views.MapView = Ext.extend(Ext.Panel, {
@@ -18,7 +17,7 @@ app.views.MapView = Ext.extend(Ext.Panel, {
     activate: function() {
       
     },
-    
+
   	show: function() {
       // Update UI
   		app.views.tabPanel.tabBar.show();
