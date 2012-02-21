@@ -5,7 +5,8 @@ app.views.map = new Ext.Map({
   title: 'Map',
   mapOptions: {
     zoom: 15,
-  }
+  },
+  hidden: true
 });
 
 app.views.MapView = Ext.extend(Ext.Panel, {

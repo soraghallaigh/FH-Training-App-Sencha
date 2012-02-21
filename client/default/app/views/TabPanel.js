@@ -17,8 +17,7 @@ app.views.TabPanel = Ext.extend(Ext.TabPanel, {
         app.views.home,
         app.views.video,
         app.views.twitter,
-        //app.views.map,
-        new app.views.MapView(),
+        app.views.map,
         app.views.settings
       ]
     });

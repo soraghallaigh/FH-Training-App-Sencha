@@ -12,7 +12,7 @@ app.views.Viewport = Ext.extend(Ext.Panel, {
     // Put instances of cards into app.views namespace
     Ext.apply(app.views, {
       home:     new app.views.Home(),
-      //map:      new app.views.MapView(),
+      map:      new app.views.MapView(),
       twitter:  new app.views.Twitter(),        
       video:    new app.views.Video(),
       settings: new app.views.Settings(),
