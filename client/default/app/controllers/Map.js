@@ -15,10 +15,9 @@ app.controllers.map = new Ext.Controller({
       act: 'getPoints',
       req: {}
     }, function(res) {
-      var mapMarkets = JSON.parse(res);
-      if (mapMarkets) {
-        for (var i = 0; i < mapMarkets.points.length; i++) {
-          var point = mapMarkets.points[i];
+      if (res) {
+        for (var i = 0; i < res.locations.length; i++) {
+          var point = res.locations[i];
           var pos   = new google.maps.LatLng(point.lat, point.lon);
 
           app.controllers.map.markers.push(new google.maps.Marker({
