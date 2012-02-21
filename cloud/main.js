@@ -53,7 +53,10 @@ function getPoints() {
 
   if (cache.length === 0) {
     var data = MARKERS;
-    var hash = createHash($fh.stringify(data));
+    var hash = $fh.hash({
+      algorithm: 'MD5',
+      text: $fh.stringify(data)
+    });
 
     // Cache the data
     doCache(hash, data);
