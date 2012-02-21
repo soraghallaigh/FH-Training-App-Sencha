@@ -4,9 +4,7 @@ app.views.Home = Ext.extend(Ext.Panel, {
 
   listeners: {
   	beforeshow: function() {
-  		app.views.tabPanel.tabBar.hide();
-  		app.views.tabPanel.componentLayout.childrenChanged = true;
-  		app.views.tabPanel.doComponentLayout();
+
   	}
   },
 
@@ -42,7 +40,7 @@ app.views.Home = Ext.extend(Ext.Panel, {
 		  		width:  100,
 		  		height: 100,
 		  		handler: function() {
-		  			app.views.tabPanel.setActiveItem( app.views.map );
+		  			app.views.viewport.setActiveItem( app.views.map );
 		  		}
 		  	},
 		  	{
@@ -54,7 +52,7 @@ app.views.Home = Ext.extend(Ext.Panel, {
 		  		width:  100,
 		  		height: 100,
 		  		handler: function() {
-		  			app.views.tabPanel.setActiveItem( app.views.twitter );
+		  			app.views.viewport.setActiveItem( app.views.twitter );
 		  		}
 		  	},
 		  	{

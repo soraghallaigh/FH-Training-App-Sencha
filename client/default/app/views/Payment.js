@@ -5,9 +5,6 @@ app.views.Payment = Ext.extend(Ext.Panel, {
 
   listeners: {
     beforeshow: function() {
-      app.views.tabPanel.tabBar.show();
-      app.views.tabPanel.componentLayout.childrenChanged = true;
-      app.views.tabPanel.doComponentLayout();
     },
   },
 
@@ -19,6 +16,7 @@ app.views.Payment = Ext.extend(Ext.Panel, {
   		items: [
   			{
   				text: 'Back',
+          hidden: app.hideBack || false,
   				handler: function() {
   					app.views.tabPanel.setActiveItem(app.views.home);
   				}

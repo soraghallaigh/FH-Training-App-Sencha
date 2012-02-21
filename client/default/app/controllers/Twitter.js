@@ -1,3 +1,4 @@
+/*
 app.controllers.twitter = new Ext.Controller({
 
   getTweets: function() {
@@ -19,3 +20,4 @@ app.controllers.twitter = new Ext.Controller({
   }
 
 });
+*/

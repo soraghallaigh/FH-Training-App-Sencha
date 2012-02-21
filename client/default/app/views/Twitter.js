@@ -5,15 +5,7 @@ app.views.Twitter = Ext.extend(Ext.Panel, {
 
   listeners: {
   	show: function() {
-  		app.views.tabPanel.tabBar.show();
-      app.views.tabPanel.componentLayout.childrenChanged = true;
-      app.views.tabPanel.doComponentLayout();
 
-  		// Get a list of tweets
-      Ext.dispatch({
-        controller: app.controllers.twitter,
-        action: 'getTweets'
-      });
   	}
   },
 
@@ -25,8 +17,9 @@ app.views.Twitter = Ext.extend(Ext.Panel, {
   		items: [
   			{
   				text: 'Back',
+          hidden: app.hideBack || false,
   				handler: function() {
-  					app.views.tabPanel.setActiveItem(app.views.home);
+  					app.views.viewport.setActiveItem(app.views.home);
   				}
   			}
   		]

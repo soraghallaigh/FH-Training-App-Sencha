@@ -61,7 +61,7 @@ app.controllers.map = new Ext.Controller({
       }
 
       // Hide the loading spinner
-      mask.hide();
+      //mask.hide();
     });
   },
 
@@ -71,7 +71,7 @@ app.controllers.map = new Ext.Controller({
     var pos = {};
 
     // Show loading spinner
-    mask.show();
+    //mask.show();
 
     $fh.geo({
       interval: 0
