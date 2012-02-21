@@ -7,7 +7,7 @@ app.models.Twitter = Ext.regModel('app.models.Twitter', {
   }
 });
 
-app.stores.twitter = new Ext.data.JsonStore({
+app.stores.twitter = new Ext.data.Store({
   model: 'app.models.Twitter',
   autoLoad: true,
 });
