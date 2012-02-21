@@ -36,6 +36,7 @@ app.views.Viewport = Ext.extend(Ext.TabPanel, {
         app.views.twitter,
         app.views.payment,
         app.views.settings,
+        /*
         {
           title: 'Webview',
           iconCls: 'home',
@@ -46,6 +47,7 @@ app.views.Viewport = Ext.extend(Ext.TabPanel, {
             });
           }
         }
+        */
       ]
     });
     app.views.Viewport.superclass.initComponent.apply(this, arguments);
