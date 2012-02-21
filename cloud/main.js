@@ -11,7 +11,8 @@ function getTweets() {
     method: 'GET',
     allowSelfSignedCert: true
   });
-  return {'data': response.body};
+  var res = JSON.stringify(response.body);
+  return {'data': res.results};
 }
 
 /*
