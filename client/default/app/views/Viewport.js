@@ -23,8 +23,8 @@ app.views.Viewport = Ext.extend(Ext.TabPanel, {
 
     // Put instances of cards into app.views namespace
     Ext.apply(app.views, {
+      twitter:  new app.views.Twitter({hideBack: true}), 
       map:      new app.views.MapView({hideBack: true}),
-      twitter:  new app.views.Twitter({hideBack: true}),        
       payment:  new app.views.Payment({hideBack: true}),
       settings: new app.views.Settings({hideBack: true}),
       camera:   new app.views.Camera({hideBack: true})
