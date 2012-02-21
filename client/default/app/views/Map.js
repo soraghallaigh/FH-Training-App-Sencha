@@ -11,7 +11,7 @@ app.views.map = new Ext.Map({
 app.views.MapView = Ext.extend(Ext.Panel, {
   title: 'Map',
   iconCls: 'home',
-  //layout: 'fit',
+  layout: 'fit',
 
   listeners: {
   	show: function() {
