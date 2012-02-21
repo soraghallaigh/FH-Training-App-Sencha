@@ -38,11 +38,11 @@ app.views.Home = Ext.extend(Ext.Panel, {
 		  	},
 		  	{
 		  		xtype: 'button',
-		  		text:  'Video',
+		  		cls: 'mapIcon',
 		  		width:  100,
 		  		height: 100,
 		  		handler: function() {
-		  			app.views.tabPanel.setActiveItem( app.views.video );
+		  			app.views.tabPanel.setActiveItem( app.views.map );
 		  		}
 		  	},
 		  	{
@@ -50,11 +50,11 @@ app.views.Home = Ext.extend(Ext.Panel, {
 		  	},
 		  	{
 		  		xtype: 'button',
-		  		cls: 'mapIcon',
+		  		cls: 'twitterIcon',
 		  		width:  100,
 		  		height: 100,
 		  		handler: function() {
-		  			app.views.tabPanel.setActiveItem( app.views.map );
+		  			app.views.tabPanel.setActiveItem( app.views.twitter );
 		  		}
 		  	},
 		  	{
@@ -82,6 +82,18 @@ app.views.Home = Ext.extend(Ext.Panel, {
 		  	},
 		  	{
 		  		xtype: 'button',
+		  		cls:  'paymentIcon',
+		  		width:  100,
+		  		height: 100,
+		  		handler: function() {
+		  			app.views.tabPanel.setActiveItem( app.views.payment );
+		  		}
+		  	},
+		  	{
+		  		xtype: 'spacer'
+		  	},
+		  	{
+		  		xtype: 'button',
 		  		cls: 'cameraIcon',
 		  		width:  100,
 		  		height: 100,
@@ -90,18 +102,6 @@ app.views.Home = Ext.extend(Ext.Panel, {
 			        controller: app.controllers.camera,
 			        action: 'openCamera'
 			      });
-		  		}
-		  	},
-		  	{
-		  		xtype: 'spacer'
-		  	},
-		  	{
-		  		xtype: 'button',
-		  		cls: 'twitterIcon',
-		  		width:  100,
-		  		height: 100,
-		  		handler: function() {
-		  			app.views.tabPanel.setActiveItem( app.views.twitter );
 		  		}
 		  	},
 		  	{
@@ -129,7 +129,7 @@ app.views.Home = Ext.extend(Ext.Panel, {
 		  	},
 		  	{
 		  		xtype: 'button',
-		  		text: 'Webview',
+		  		cls: 'webviewIcon',
 		  		width:  100,
 		  		height: 100,
 		  		handler: function() {
@@ -156,25 +156,5 @@ app.views.Home = Ext.extend(Ext.Panel, {
 		  	}
 	    ]
   	}),
-
-  	/*
-  	new Ext.Panel({
-  		layout: {
-	      type: 'hbox',
-	      pack: 'center',  
-	    },
-	    items: [
-		  	{ xtype: 'spacer'	},
-		  	{
-		  		html: 'Webview'
-		  	},
-		  	{ xtype: 'spacer'	},
-		  	{
-		  		html: 'Settings'
-		  	},
-		  	{ xtype: 'spacer'	},
-	    ]
-  	})
-  	*/
   ]
 });

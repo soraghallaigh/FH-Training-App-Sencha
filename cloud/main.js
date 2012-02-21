@@ -1,3 +1,6 @@
+/*
+ * Twitter
+ */
 function getTweets() {
   var username   = 'feedhenry';
   var num_tweets = 10;
@@ -10,6 +13,23 @@ function getTweets() {
   });
 }
 
+/*
+ * Payment
+ */ 
+function payment() {
+  var cardType   = $params.cardType;
+  var cardNumber = $params.cardNumber;
+  var url = "http://www.webservicex.net/CreditCard.asmx/ValidateCardNumber?cardType=" + cardType + "&cardNumber=" + cardNumber;
+
+  return $fh.web({
+    url: url,
+    method: 'GET'
+  });
+}
+
+/*
+ * Maps
+ */
 // Cache points for 10 seconds
 var CACHE_TIME = 30;
 var MARKERS = {

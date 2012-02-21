@@ -15,7 +15,7 @@ app.views.TabPanel = Ext.extend(Ext.TabPanel, {
     Ext.apply(this, {
       items: [
         app.views.home,
-        app.views.video,
+        app.views.payment,
         app.views.twitter,
         app.views.map,
         app.views.settings
