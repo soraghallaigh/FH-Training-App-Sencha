@@ -10,26 +10,49 @@ app.controllers.map = new Ext.Controller({
     }
   },
 
-  getPoints: function(map, callback) {
+  loadPoints: function() {
+    // Load points from local storage
+    $fh.data({
+      key: 'points'
+    }, function(res) {
+      if (res.val === null) { // No client data found
+        app.controllers.map.getPoints();
+      } else {
+        // Parse the cached data
+        var cache = JSON.parse(res);
+        var hash  = cache.hash;
+
+        app.controllers.map.getPoints(cache, hash);
+      }
+    });
+  },
+
+  getPoints: function(cache, hash) {
     $fh.act({
       act: 'getPoints',
-      req: {}
+      req: {
+        hash: hash,
+        timestamp: new Date().getTime()
+      }
     }, function(res) {
-      if (res) {
-        for (var i = 0; i < res.locations.length; i++) {
-          var point = res.locations[i];
-          var pos   = new google.maps.LatLng(point.lat, point.lon);
-
-          app.controllers.map.markers.push(new google.maps.Marker({
-            position: pos,        
-            map: map,
-            icon: 'http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=' + (i+1) + '|FF0000|000000'
-          })); 
-        }
+      if (hash === res.hash) {
+        console.log("Client data is at the latest version");
+      } else {
+        $fh.data({
+          key: 'points',
+          val: JSON.stringify(res)
+        });
       }
 
-      if (typeof callback !== "undefined") {
-        callback();
+      for (var i = 0; i < res.locations.length; i++) {
+        var point = res.locations[i];
+        var pos   = new google.maps.LatLng(point.lat, point.lon);
+
+        app.controllers.map.markers.push(new google.maps.Marker({
+          position: pos,        
+          map: map,
+          icon: 'http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=' + (i+1) + '|FF0000|000000'
+        })); 
       }
     });
   },
@@ -59,9 +82,7 @@ app.controllers.map = new Ext.Controller({
       }));  
 
       // Get markers from the cloud
-      app.controllers.map.getPoints(map, function() {
-        mask.hide()
-      });
+      app.controllers.map.loadPoints();
     }, function() {
       // We failed to get the users geolocation, fallback to geo ip
       alert("$fh.geo failed");
