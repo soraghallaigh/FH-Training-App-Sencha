@@ -10,7 +10,7 @@ function getTweets() {
     url: url,
     method: 'GET',
     allowSelfSignedCert: true
-  });
+  }).results;
 }
 
 /*
