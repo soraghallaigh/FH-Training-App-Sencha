@@ -27,15 +27,17 @@ app.views.Twitter = Ext.extend(Ext.Panel, {
   ],
   
   items: [
-  	new Ext.List({
-      id: 'list',
+    {
+      xtype: 'list',
+      width: '100%',
       store: app.stores.twitter,
-      //itemTpl: '{profile_image_url}{text}',
       itemTpl: '<img style="float: left; margin: 0px 8px 8px 0px;" src="{profile_image_url}" />' + 
-               '<strong>{from_user}</strong>' +
-               '{text}',
-      grouped: false,
-      scroll: 'vertical'
-  	})
+      '<strong>{from_user}</strong>' +
+      '{text}',
+      flex: 1,
+      plugins: [{
+        ptype: 'pullrefresh'
+      }]
+    }
   ]
 });
