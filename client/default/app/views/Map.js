@@ -7,16 +7,6 @@ app.views.MapView = Ext.extend(Ext.Panel, {
 
   listeners: {
     activate: function() {
-      
-    },
-
-  	show: function() {
-      // Update UI
-  		app.views.tabPanel.tabBar.show();
-      app.views.tabPanel.componentLayout.childrenChanged = true;
-      app.views.tabPanel.doComponentLayout();
-
-      // Get the users location
       new Ext.Map({
         fullscreen: true,
         layout: 'fit',
@@ -26,6 +16,15 @@ app.views.MapView = Ext.extend(Ext.Panel, {
           zoom: 15,
         }
       });
+    },
+
+  	show: function() {
+      // Update UI
+  		app.views.tabPanel.tabBar.show();
+      app.views.tabPanel.componentLayout.childrenChanged = true;
+      app.views.tabPanel.doComponentLayout();
+
+      // Get the users location
       /*
       Ext.dispatch({
         controller: app.controllers.map,
