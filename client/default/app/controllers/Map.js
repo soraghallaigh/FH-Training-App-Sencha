@@ -15,6 +15,8 @@ app.controllers.map = new Ext.Controller({
     $fh.data({
       key: 'points'
     }, function(res) {
+      console.log(res);
+
       if (res.val === null) { // No client data found
         app.controllers.map.getPoints();
       } else {
