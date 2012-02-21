@@ -31,6 +31,7 @@ app.views.MapView = Ext.extend(Ext.Panel, {
   	{
   		dock: 'top',
   		xtype: 'toolbar',
+      title: '<img style="margin-top: 5px;" src="app/images/logo.png" />',
   		items: [
   			{
   				text: 'Back',

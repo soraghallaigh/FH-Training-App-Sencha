@@ -14,12 +14,7 @@ app.views.Home = Ext.extend(Ext.Panel, {
   	{
   		dock: 'top',
   		xtype: 'toolbar',
-  		items: [
-  			{
-  				xtype: 'panel',
-  				title: 'FeedHenry'			
-  			}
-  		]
+  		title: '<img style="margin-top: 5px;" src="app/images/logo.png" />',
   	}
   ],
 
