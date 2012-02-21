@@ -19,7 +19,6 @@ app.views.Viewport = Ext.extend(Ext.TabPanel, {
   }),
 
   initComponent: function() {
-    
 
     // Put instances of cards into app.views namespace
     Ext.apply(app.views, {

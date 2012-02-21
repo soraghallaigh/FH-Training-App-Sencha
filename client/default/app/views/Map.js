@@ -1,4 +1,5 @@
 app.views.map = new Ext.Map({
+  fullscreen: true,
   layout: 'fit',
   id: 'map',
   title: 'Map',
