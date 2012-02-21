@@ -1,7 +1,4 @@
 function getTweets() {
-  //var url      = 'http://api.twitter.com/1/statuses/user_timeline/' + username + '.json?callback=?';
-  //var url        = 'https://api.twitter.com/1/statuses/user_timeline.json?include_entities=true&include_rts=true&screen_name=' + username + '&count=' + num_tweets;
-
   var username   = 'feedhenry';
   var num_tweets = 10;
   var url        = 'http://search.twitter.com/search.json?q=' + username;
@@ -11,4 +8,19 @@ function getTweets() {
     method: 'GET',
     allowSelfSignedCert: true
   });
+}
+
+function getPoints() {
+  return {
+    locations: [
+      {
+        lat: '52.245671',
+        lon: '-7.080002'
+      },
+      {
+        lat: '52.257861',
+        lon: '-7.136993'
+      }
+    ]
+  }
 }

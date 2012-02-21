@@ -10,10 +10,38 @@ app.controllers.map = new Ext.Controller({
     }
   },
 
+  getPoints: function(map, callback) {
+    $fh.act({
+      act: 'getPoints',
+      req: {}
+    }, function(res) {
+      var mapMarkets = JSON.parse(res);
+      if (mapMarkets) {
+        for (var i = 0; i < mapMarkets.points.length; i++) {
+          var point = mapMarkets.points[i];
+          var pos   = new google.maps.LatLng(point.lat, point.lon);
+
+          app.controllers.map.markers.push(new google.maps.Marker({
+            position: pos,        
+            map: map,
+            icon: 'http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=A|FF0000|000000'
+          })); 
+        }
+      }
+
+      if (typeof callback !== "undefined") {
+        callback();
+      }
+    });
+  },
+
   getLocation: function(options){
     // Instance of the google map
     var map = Ext.getCmp("map").map;
     var pos = {};
+
+    // Show loading spinner
+    mark.show();
 
     $fh.geo({
       interval: 0
@@ -24,22 +52,21 @@ app.controllers.map = new Ext.Controller({
       // Remove any previously created markers
       app.controllers.map.clearMarkers();
 
-      // Create a marker
+      // Create a marker at the current location
       app.controllers.map.markers.push(new google.maps.Marker({
         position: pos,        
         map: map,
         icon: 'http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=A|FF0000|000000'
       }));  
+
+      // Get markers from the cloud
+      app.controllers.map.getPoints(map, function() {
+        mask.hide()
+      });
     }, function() {
       // We failed to get the users geolocation, fallback to geo ip
       alert("$fh.geo failed");
       alert(JSON.stringify(res.geoip));
-
-      /*
-      $fh.geoip(function(res) { 
-        console.log(JSON.stringify(res.geoip)); 
-      });
-      */
     });
   }
 
