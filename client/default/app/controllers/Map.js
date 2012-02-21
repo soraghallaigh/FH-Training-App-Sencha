@@ -91,6 +91,7 @@ app.controllers.map = new Ext.Controller({
 
       // Get markers from the cloud
       app.controllers.map.loadPoints();
+      
     }, function() {
       // We failed to get the users geolocation, fallback to geo ip
       alert("$fh.geo failed");
