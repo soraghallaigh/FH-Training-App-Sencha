@@ -3,6 +3,11 @@ app.controllers.payment = new Ext.Controller({
   processPayment: function() {
     var cardType   = Ext.getCmp("cardtype").getValue();
     var cardNumber = Ext.getCmp("cardnumber").getValue();
+
+    if (cardNumber.length !== 16) {
+      Ext.Msg.alert('Error', 'Card number must be 16 digits.', Ext.emptyFn);
+      return;
+    }
     
     // Show loading spinner
     mask.show();
@@ -14,6 +19,7 @@ app.controllers.payment = new Ext.Controller({
         cardNumber: cardNumber
       }
     }, function(res) {
+      alert(res);
       console.log(res);
 
       var regEx  = new RegExp("<\s*string[^>]*>(.*?)<\s*/\s*string>", "g");
