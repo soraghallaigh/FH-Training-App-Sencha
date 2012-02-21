@@ -6,8 +6,7 @@ app.views.map = new Ext.Map({
   mapOptions: {
     zoom: 15,
     //center: new google.maps.LatLng(52.262852,-7.115364),
-  },
-  hidden: true
+  }
 });
 
 app.views.MapView = Ext.extend(Ext.Panel, {
@@ -27,7 +26,6 @@ app.views.MapView = Ext.extend(Ext.Panel, {
         controller: app.controllers.map,
         action: 'getLocation'
       });
-      app.views.map.show();
   	}
   },
 
