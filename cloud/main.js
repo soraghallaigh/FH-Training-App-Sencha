@@ -59,7 +59,7 @@ function getPoints() {
     });
 
     // Cache the data
-    doCache(hash, data);
+    cachePoints(hash, data);
 
     // Build the response
     response = {'data': data, 'hash':hash, 'cached':false};
