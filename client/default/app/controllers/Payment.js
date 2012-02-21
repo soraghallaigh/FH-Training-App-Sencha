@@ -13,6 +13,10 @@ app.controllers.payment = new Ext.Controller({
     }, function(res) {
       console.log(res);
 
+      var regEx  = new RegExp("<\s*string[^>]*>(.*?)<\s*/\s*string>", "g");
+      var result = regEx.exec(res.body)[1];
+
+      Ext.Msg.alert('Response'), result, Ext.emptyFn);
     });
   }
 
