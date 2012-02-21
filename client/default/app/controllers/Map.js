@@ -36,10 +36,11 @@ app.controllers.map = new Ext.Controller({
         timestamp: new Date().getTime()
       }
     }, function(res) {
-      if (hash === res.hash) {
+      if (hash && hash === res.hash) {
         console.log("Client data is at the latest version");
       } else {
         $fh.data({
+          act: 'save',
           key: 'points',
           val: JSON.stringify(res)
         });
