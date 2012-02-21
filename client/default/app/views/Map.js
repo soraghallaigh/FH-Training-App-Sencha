@@ -13,10 +13,6 @@ app.views.MapView = Ext.extend(Ext.Panel, {
   layout: 'fit',
 
   listeners: {
-    activate: function() {
-      
-    },
-
   	show: function() {
       // Update UI
   		app.views.tabPanel.tabBar.show();
@@ -47,6 +43,6 @@ app.views.MapView = Ext.extend(Ext.Panel, {
   ],
   
   items: [
-  	//app.views.map
+  	app.views.map
   ]
 });
