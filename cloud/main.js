@@ -72,7 +72,7 @@ function getPoints() {
       response = {'hash':$params.hash, 'cached':true};
     } else {
       // Hash value from client missing or incorrect, return cached cloud data
-      response = cached;
+      response = cache;
     }
   }
   return response;
