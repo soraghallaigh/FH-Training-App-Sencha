@@ -11,7 +11,7 @@ function getTweets() {
 }
 
 // Cache points for 10 seconds
-var CACHE_TIME = 10;
+var CACHE_TIME = 30;
 var MARKERS = {
   locations: [
     {
