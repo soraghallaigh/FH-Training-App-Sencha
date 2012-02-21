@@ -18,7 +18,7 @@ app.views.MapView = Ext.extend(Ext.Panel, {
   layout: 'fit',
 
   listeners: {
-    pagecreate: function() {
+    onCreate: function() {
       app.views.map = new Ext.Map({
         fullscreen: true,
         layout: 'fit',
