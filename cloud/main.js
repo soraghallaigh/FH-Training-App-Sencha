@@ -6,11 +6,12 @@ function getTweets() {
   var num_tweets = 10;
   var url        = 'http://search.twitter.com/search.json?q=' + username;
 
-  return $fh.web({
+  var response = $fh.web({
     url: url,
     method: 'GET',
     allowSelfSignedCert: true
-  }).results;
+  });
+  return response.body.results;
 }
 
 /*
