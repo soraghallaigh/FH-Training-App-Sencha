@@ -1,0 +1,35 @@
+.mapIcon {
+	width: 100px !important;
+	width: 100px !important;
+	background-color: transparent;
+	border: none;
+  background-size: 100% 100%;
+  background-image: url("../images/icons/maps_icon.png");
+}
+
+.twitterIcon {
+	width: 100px !important;
+	width: 100px !important;
+	background-color: transparent;
+	border: none;
+  background-size: 100% 100%;
+  background-image: url("../images/icons/twitter_icon.png");
+}
+
+.settingsIcon {
+	width: 100px !important;
+	width: 100px !important;
+	background-color: transparent;
+	border: none;
+  background-size: 100% 100%;
+  background-image: url("../images/icons/settings_icon.png");
+}
+
+.cameraIcon {
+	width: 100px !important;
+	width: 100px !important;
+	background-color: transparent;
+	border: none;
+  background-size: 100% 100%;
+  background-image: url("../images/icons/camera_icon.png");
+}

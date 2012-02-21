@@ -50,7 +50,7 @@ app.views.Home = Ext.extend(Ext.Panel, {
 		  	},
 		  	{
 		  		xtype: 'button',
-		  		text: 'Map',
+		  		cls: 'mapIcon',
 		  		width:  100,
 		  		height: 100,
 		  		handler: function() {
@@ -82,7 +82,7 @@ app.views.Home = Ext.extend(Ext.Panel, {
 		  	},
 		  	{
 		  		xtype: 'button',
-		  		text: 'Camera',
+		  		cls: 'cameraIcon',
 		  		width:  100,
 		  		height: 100,
 		  		handler: function() {
@@ -97,7 +97,7 @@ app.views.Home = Ext.extend(Ext.Panel, {
 		  	},
 		  	{
 		  		xtype: 'button',
-		  		text: 'Twitter',
+		  		cls: 'twitterIcon',
 		  		width:  100,
 		  		height: 100,
 		  		handler: function() {
@@ -144,7 +144,7 @@ app.views.Home = Ext.extend(Ext.Panel, {
 		  	},		  	
 		  	{
 		  		xtype: 'button',
-		  		text: 'Settings',
+		  		cls: 'settingsIcon',
 		  		width:  100,
 		  		height: 100,
 		  		handler: function() {
@@ -155,6 +155,26 @@ app.views.Home = Ext.extend(Ext.Panel, {
 		  		xtype: 'spacer'
 		  	}
 	    ]
+  	}),
+
+  	/*
+  	new Ext.Panel({
+  		layout: {
+	      type: 'hbox',
+	      pack: 'center',  
+	    },
+	    items: [
+		  	{ xtype: 'spacer'	},
+		  	{
+		  		html: 'Webview'
+		  	},
+		  	{ xtype: 'spacer'	},
+		  	{
+		  		html: 'Settings'
+		  	},
+		  	{ xtype: 'spacer'	},
+	    ]
   	})
+  	*/
   ]
 });
