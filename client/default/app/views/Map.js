@@ -1,4 +1,13 @@
-app.views.map = {};
+app.views.map = new Ext.Map({
+  fullscreen: true,
+  layout: 'fit',
+  id: 'map',
+  title: 'Map',
+  mapOptions: {
+    zoom: 15,
+  },
+  hidden: true
+});
 
 app.views.MapView = Ext.extend(Ext.Panel, {
   title: 'Map',
@@ -7,17 +16,9 @@ app.views.MapView = Ext.extend(Ext.Panel, {
 
   listeners: {
     activate: function() {
-      new Ext.Map({
-        fullscreen: true,
-        layout: 'fit',
-        id: 'map',
-        title: 'Map',
-        mapOptions: {
-          zoom: 15,
-        }
-      });
+      
     },
-
+    
   	show: function() {
       // Update UI
   		app.views.tabPanel.tabBar.show();
@@ -25,12 +26,10 @@ app.views.MapView = Ext.extend(Ext.Panel, {
       app.views.tabPanel.doComponentLayout();
 
       // Get the users location
-      /*
       Ext.dispatch({
         controller: app.controllers.map,
         action: 'getLocation'
       });
-      */
   	}
   },
 
