@@ -27,7 +27,9 @@ app.views.Camera = Ext.extend(Ext.Panel, {
     
       dockedItems: [
         {
-          dock: 'bottom',
+          layout: {
+            dock: 'bottom',
+          }
           items: [
             {
               xtype: 'button',
@@ -38,7 +40,7 @@ app.views.Camera = Ext.extend(Ext.Panel, {
             }
           ]
         }
-      ],
+      ], 
 
       items: [
         {
