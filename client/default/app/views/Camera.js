@@ -29,18 +29,7 @@ app.views.Camera = Ext.extend(Ext.Panel, {
   
   items: [
     new Ext.Panel({
-      items: [
-        new Ext.Panel({
-          layout: {
-            type: 'hbox',
-            pack: 'center',  
-          },
-          items: [
-            {
-              html: '<img src="app/images/icons/camera_icon.png"/>'
-            }
-          ]
-        }),
+      items: [        
         {
           height: 20
         },
