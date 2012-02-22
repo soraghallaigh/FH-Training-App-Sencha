@@ -8,6 +8,8 @@ In this tutorial we will be creating the basic structure of the app. At the end 
 * Create a viewport                     (app/views/Viewport.js)
 * Create a view with some UI components (app/views/Home.js)
 
+![](https://github.com/feedhenry/Training-Demo-App/raw/v1/docs/HomeView.png)
+
 ## Step 1
 
 First we need to initialize the Sencha Touch framework. This code registers the 'app' namespace and also creates an instance of the viewport. This is done by adding the following code to app.js;
