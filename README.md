@@ -8,15 +8,16 @@ In this tutorial we will be creating the basic structure of the app. At the end 
 * Create a viewport                     (app/views/Viewport.js)
 * Create a view with some UI components (app/views/Home.js)
 
-The Sencha Touch framework is initialized in app.js:
+## Step 1
 
-[[Example Code]]
-Ext.regApplication({
-  name: 'app',
-  launch: function() {
-    this.views.viewport = new this.views.Viewport();
-  }
-});
+First we need to initialize the Sencha Touch framework. This code registers the 'app' namespace and also creates an instance of the viewport. This is done by adding the following code to app.js;
+
+	Ext.regApplication({
+	  name: 'app',
+	  launch: function() {
+	    this.views.viewport = new this.views.Viewport();
+	  }
+	});
 
 This code registers the 'app' namespace and also creates an instance of the viewport (app.views.viewport)
 
