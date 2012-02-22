@@ -90,10 +90,7 @@ app.views.Home = Ext.extend(Ext.Panel, {
 		  		width:  100,
 		  		height: 100,
 		  		handler: function() {
-		  		  Ext.dispatch({
-			        controller: app.controllers.camera,
-			        action: 'openCamera'
-			      });
+
 		  		}
 		  	},
 		  	{
@@ -125,10 +122,7 @@ app.views.Home = Ext.extend(Ext.Panel, {
 		  		width:  100,
 		  		height: 100,
 		  		handler: function() {
-		  			$fh.webview({
-		  				title: 'FeedHenry',
-		  				url: 'http://www.feedhenry.com/'
-		  			});
+
 		  		}
 		  	},
 		  	{
@@ -140,7 +134,7 @@ app.views.Home = Ext.extend(Ext.Panel, {
 		  		width:  100,
 		  		height: 100,
 		  		handler: function() {
-		  			app.views.viewport.setActiveItem(app.views.settings, {type: 'slide', direction: 'left'});
+		  			
 		  		}
 		  	},
 		  	{
