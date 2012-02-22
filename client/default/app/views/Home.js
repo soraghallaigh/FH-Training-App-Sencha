@@ -2,12 +2,6 @@ app.views.Home = Ext.extend(Ext.Panel, {
   title: 'Home',
   iconCls: 'home',
 
-  listeners: {
-  	beforeshow: function() {
-
-  	}
-  },
-
   dockedItems: [
   	{
   		dock: 'top',
@@ -84,7 +78,7 @@ app.views.Home = Ext.extend(Ext.Panel, {
 		  		width:  100,
 		  		height: 100,
 		  		handler: function() {
-		  			app.views.tabPanel.setActiveItem( app.views.payment );
+		  			app.views.viewport.setActiveItem( app.views.payment );
 		  		}
 		  	},
 		  	{
@@ -146,7 +140,7 @@ app.views.Home = Ext.extend(Ext.Panel, {
 		  		width:  100,
 		  		height: 100,
 		  		handler: function() {
-		  			app.views.tabPanel.setActiveItem( app.views.settings );
+		  			app.views.viewport.setActiveItem( app.views.settings );
 		  		}
 		  	},
 		  	{
