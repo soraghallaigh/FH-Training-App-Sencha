@@ -25,7 +25,7 @@ this.views.viewport = new this.views.Viewport();
 
 We add any views we create to the instance of the viewport. The first view we create is the 'Home' view, this view contains a number of buttons which (In later versions) will go to different views.
 
-The 'Home' view is made up on a number of Ext.Panel objects (http://docs.sencha.com/touch/1-1/#!/api/Ext.Panel). A panel is essentially a container that is used to contain UI components. The diagram below shows the layout of the panel for the 'Home' view.
+The 'Home' view is made up on a number of Ext.Panel objects (http://docs.sencha.com/touch/1-1/#!/api/Ext.Panel). A panel is essentially a container that is used to hold UI components. The diagram below shows the layout of the panel for the 'Home' view.
 
 Panel
 {
