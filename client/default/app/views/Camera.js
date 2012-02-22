@@ -1,7 +1,6 @@
 app.views.Camera = Ext.extend(Ext.Panel, {
   title: 'Camera',
   iconCls: 'home',
-  layout: 'card',
 
   listeners: {
     show: function() {
@@ -16,10 +15,9 @@ app.views.Camera = Ext.extend(Ext.Panel, {
       title: '<img style="margin-top: 5px;" src="app/images/logo.png" />',
       items: [
         {
-          text: 'Back',
-          hidden: app.hideBack || false,
+          text: 'Back',          
           handler: function() {
-            app.views.viewport.setActiveItem(0);
+            app.views.viewport.setActiveItem(app.views.home);
           }
         }
       ]
@@ -28,23 +26,6 @@ app.views.Camera = Ext.extend(Ext.Panel, {
   ],
   
   items: [
-    new Ext.Panel({
-      items: [        
-        {
-          height: 20
-        },
-        {
-          xtype: 'button',
-          text:  'Take Photo',
-          handler: function() {
-            Ext.dispatch({
-              controller: app.controllers.camera,
-              action: 'openCamera'
-            });
-          }
-        }
-      ]
-    }),
     new Ext.Panel({
      layout: {
        type: 'fit'
