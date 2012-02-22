@@ -1,15 +1,21 @@
 app.views.Camera = Ext.extend(Ext.Panel, {
   title: 'Camera',
   iconCls: 'home',
+  layout: 'fit',
+
+  listeners: {
+    show: function() {
+
+    }
+  },
 
   dockedItems: [
     {
       dock: 'top',
       xtype: 'toolbar',
-      title: '<img style="margin-top: 5px;" src="app/images/logo.png" />',
       items: [
         {
-          text: 'Back',          
+          text: 'Back',
           handler: function() {
             app.views.viewport.setActiveItem(app.views.home);
           }
@@ -31,17 +37,10 @@ app.views.Camera = Ext.extend(Ext.Panel, {
   ],
   
   items: [
-    new Ext.Panel({
-     layout: {
-       type: 'fit'
-      },
-
-      items: [
-        {
-          id: 'camera_image',
-          tpl: '<img src="{image}" width="100%" height="100%"/>'
-        }
-      ]
-    })
+    {
+      id: 'camera_image',
+      tpl: '<img src="{image}" width="100%" height="100%"/>'
+    },
+    
   ]
 });
