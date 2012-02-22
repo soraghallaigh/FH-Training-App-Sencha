@@ -7,7 +7,7 @@ app.views.Camera = Ext.extend(Ext.Panel, {
     show: function() {
       app.views.Camera.setActiveItem(0);
     }
-  }
+  },
 
   dockedItems: [
     {
