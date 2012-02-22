@@ -30,20 +30,6 @@ app.views.Viewport = Ext.extend(Ext.TabPanel, {
             app.views.twitter,
             app.views.map,      
             app.views.payment,
-            {
-              title: 'Camera',
-              iconCls: 'home',
-              layout: 'fit',
-
-              listeners: {
-                beforeshow: function() {
-                  Ext.dispatch({
-                    controller: app.controllers.camera,
-                    action: 'openCamera'
-                  });
-                }
-              }
-            },
             app.views.settings,
           ]
         });
