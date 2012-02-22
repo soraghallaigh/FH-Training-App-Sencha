@@ -11,12 +11,12 @@ app.views.Viewport = Ext.extend(Ext.Panel, {
   initComponent: function() {
     // Put instances of cards into app.views namespace
     Ext.apply(app.views, {
-      home:     new app.views.Home()
+
     });
     //put instances of cards into viewport
     Ext.apply(this, {
       items: [
-        app.views.home
+
       ]
     });
     app.views.Viewport.superclass.initComponent.apply(this, arguments);
