@@ -5,7 +5,7 @@ app.views.Camera = Ext.extend(Ext.Panel, {
 
   listeners: {
     show: function() {
-      app.views.Camera.setActiveItem(0);
+      app.views.camera.setActiveItem(0);
     }
   },
 
