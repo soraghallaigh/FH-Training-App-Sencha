@@ -100,6 +100,9 @@ and
 
 	<script type="text/javascript" src="app/views/Home.js"></script>
 
+![](https://github.com/feedhenry/Training-Demo-App/blob/v2/docs/HomeView.png?raw=true)
+
 ## Extra Task
 
 Try and add some extra icons to the home screen, some sample images are provided in the images/icons directory.
+
