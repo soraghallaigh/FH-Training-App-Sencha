@@ -19,22 +19,57 @@ First we need to initialize the Sencha Touch framework. This code registers the 
 	  }
 	});
 
-This code registers the 'app' namespace and also creates an instance of the viewport (app.views.viewport)
+## Step 2
 
-[[Example Code]]
-this.views.viewport = new this.views.Viewport();
+Now that the Sencha Touch framework is initialized we can create the viewport. The viewport will contain any views we use in the app.
+
+	app.views.Viewport = Ext.extend(Ext.Panel, {
+	  fullscreen: true,
+	  ui: 'light',
+	  layout: 'card',
+
+	  cardSwitchAnimation: {
+	    type: 'slide',
+	    cover: true
+	  },
+
+	  initComponent: function() {
+	    // Put instances of cards into app.views namespace
+	    Ext.apply(app.views, {
+
+	    });
+	    //put instances of cards into viewport
+	    Ext.apply(this, {
+	      items: [
+
+	      ]
+	    });
+	    app.views.Viewport.superclass.initComponent.apply(this, arguments);
+	  }
+	});
+
+	// Loading Spinner
+	var mask = new Ext.LoadMask(Ext.getBody(), {
+	  msg: "Loading Data"
+	});
 
 We add any views we create to the instance of the viewport. The first view we create is the 'Home' view, this view contains a number of buttons which (In later versions) will go to different views.
 
-The 'Home' view is made up on a number of Ext.Panel objects (http://docs.sencha.com/touch/1-1/#!/api/Ext.Panel). A panel is essentially a container that is used to hold UI components. The diagram below shows the layout of the panel for the 'Home' view.
+## Task - Add a view to the viewport
 
-Panel
-{
-	[Spacer] [Button] [Spacer] [Button] [Spacer]
-	[Panel (Height 20px)]
-	[Spacer] [Button] [Spacer] [Button] [Spacer]
-}
+Inside the ‘initComponent’ function locate the following code;
 
-# Extra Task
+	//put instances of cards into viewport
+	Ext.apply(this, {
+	  items: [
 
-The current version of the home view contains four buttons, add another two buttons to the view.
+	  ]
+	});
+
+Inside the items array add the following code;
+
+	{
+	  html: 'Test View'
+	}
+
+If you open your index.html page you will now see the following;
