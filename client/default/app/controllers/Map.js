@@ -2,6 +2,7 @@ app.controllers.map = new Ext.Controller({
 
   markers: [], // Keep track of any map markers
 
+  // Remove all markers from the map
   clearMarkers: function() {
     if (this.markers) {
       for (i = 0; i < this.markers.length; i++) {
@@ -10,8 +11,10 @@ app.controllers.map = new Ext.Controller({
     }
   },
 
+  /*
+   * Load cached points from local storage
+   */
   loadPoints: function() {
-    // Load points from local storage
     $fh.data({
       key: 'points'
     }, function(res) {
@@ -29,6 +32,9 @@ app.controllers.map = new Ext.Controller({
     });
   },
 
+  /*
+   * Get points from the cloud
+   */
   getPoints: function(cache, hash) {
     var map = Ext.getCmp("map").map;
     $fh.act({
@@ -65,13 +71,13 @@ app.controllers.map = new Ext.Controller({
     });
   },
 
+  /*
+   * Get the users location
+   */
   getLocation: function(options){
     // Instance of the google map
     var map = Ext.getCmp("map").map;
     var pos = {};
-
-    // Show loading spinner
-    //mask.show();
 
     $fh.geo({
       interval: 0
@@ -86,7 +92,7 @@ app.controllers.map = new Ext.Controller({
       app.controllers.map.markers.push(new google.maps.Marker({
         position: pos,        
         map: map,
-        icon: 'http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=0|FF0000|000000'
+        icon: 'http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=0|00FF00|000000'
       }));  
 
       // Get markers from the cloud
