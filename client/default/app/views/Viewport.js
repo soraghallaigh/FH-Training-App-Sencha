@@ -49,10 +49,7 @@ app.views.Viewport = Ext.extend(Ext.TabPanel, {
   }
 });
 
-// Loading Spinner
-var mask = new Ext.LoadMask(Ext.getBody(), {
-  msg: "Loading Data"
-});
+
 */
 
 app.views.Viewport = Ext.extend(Ext.TabPanel, {
@@ -68,11 +65,6 @@ app.views.Viewport = Ext.extend(Ext.TabPanel, {
         type: 'slide',
         cover: true
     },
-    /*
-    defaults: {
-        scroll: 'vertical'
-    },
-    */
     
     initComponent: function() {
         //put instances of cards into app.views namespace
@@ -97,4 +89,9 @@ app.views.Viewport = Ext.extend(Ext.TabPanel, {
     layoutOrientation : function(orientation, w, h) {
         app.views.Viewport.superclass.layoutOrientation.call(this, orientation, w, h);        
     }
+});
+
+// Loading Spinner
+var mask = new Ext.LoadMask(Ext.getBody(), {
+  msg: "Loading Data"
 });
