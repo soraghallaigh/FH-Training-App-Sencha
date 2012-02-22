@@ -18,6 +18,9 @@ app.views.MapView = Ext.extend(Ext.Panel, {
   },
 
   listeners: {
+    activate: function() {
+      google.maps.event.trigger(Ext.getCmp("map").map, 'resize');
+    },
   	show: function() {
       // Get the users location
       Ext.dispatch({
