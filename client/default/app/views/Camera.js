@@ -16,7 +16,18 @@ app.views.Camera = Ext.extend(Ext.Panel, {
         }
       ]
     },
-    
+    {
+      dock: 'bottom',
+      items: [
+        {
+          xtype: 'button',
+          text: 'Upload Image',
+          handler: function() {
+            Ext.Msg.alert('Upload', 'Upload Button Handler.', Ext.emptyFn);
+          }
+        }
+      ]
+    }
   ],
   
   items: [
@@ -24,23 +35,6 @@ app.views.Camera = Ext.extend(Ext.Panel, {
      layout: {
        type: 'fit'
       },
-    
-      dockedItems: [
-        {
-          layout: {
-            dock: 'bottom',
-          },
-          items: [
-            {
-              xtype: 'button',
-              text: 'Upload Image',
-              handler: function() {
-                Ext.Msg.alert('Upload', 'Upload Button Handler.', Ext.emptyFn);
-              }
-            }
-          ]
-        }
-      ], 
 
       items: [
         {
