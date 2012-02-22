@@ -46,7 +46,10 @@ app.views.Camera = Ext.extend(Ext.Panel, {
       ]
     }),
     new Ext.Panel({
-
+     layout: {
+       type: 'fit'
+      },
+    
       dockedItems: [
         {
           dock: 'bottom',
