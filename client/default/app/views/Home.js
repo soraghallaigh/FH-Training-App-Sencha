@@ -17,7 +17,7 @@ app.views.Home = Ext.extend(Ext.Panel, {
   	},
 
   	/* 
-  	 * Video & Google Maps Buttons 
+  	 * Google Maps & Twitter Buttons
   	 */
   	new Ext.Panel({
   		height: 100,
@@ -57,100 +57,5 @@ app.views.Home = Ext.extend(Ext.Panel, {
 	    ]
   	}),
 
-  	{
-  		xtype: 'panel',
-  		height: 20
-  	},
-
-  	/* 
-  	 * Camera and Twitter Buttons 
-  	 */
-  	new Ext.Panel({
-  		height: 100,
-
-  		layout: {
-	      type: 'hbox',
-	      pack: 'center',  
-	    },
-	    items: [
-	    	{
-		  		xtype: 'spacer'
-		  	},
-		  	{
-		  		xtype: 'button',
-		  		cls:  'paymentIcon',
-		  		width:  100,
-		  		height: 100,
-		  		handler: function() {
-		  			
-		  		}
-		  	},
-		  	{
-		  		xtype: 'spacer'
-		  	},
-		  	{
-		  		xtype: 'button',
-		  		cls: 'cameraIcon',
-		  		width:  100,
-		  		height: 100,
-		  		handler: function() {
-		  		  Ext.dispatch({
-			        controller: app.controllers.camera,
-			        action: 'openCamera'
-			      });
-		  		}
-		  	},
-		  	{
-		  		xtype: 'spacer'
-		  	}
-	    ]
-  	}),
-
-  	{
-  		xtype: 'panel',
-  		height: 20
-  	},
-
-  	/*
-  	 * Webview & Settings Buttons  
-  	 */
-  	new Ext.Panel({
-  		height: 100,
-
-  		layout: {
-	      type: 'hbox',
-	      pack: 'center',  
-	    },
-	    items: [
-	    	{
-		  		xtype: 'spacer'
-		  	},
-		  	{
-		  		xtype: 'button',
-		  		cls: 'webviewIcon',
-		  		width:  100,
-		  		height: 100,
-		  		handler: function() {
-
-		  		}
-		  	},
-		  	{
-		  		xtype: 'spacer'
-		  	},		  	
-		  	{
-		  		xtype: 'button',
-		  		cls: 'settingsIcon',
-		  		width:  100,
-		  		height: 100,
-		  		handler: function() {
-		  			
-		  		}
-		  	},
-
-		  	{
-		  		xtype: 'spacer'
-		  	}
-	    ]
-  	}),
   ]
 });
