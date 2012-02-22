@@ -34,7 +34,7 @@ app.views.Home = Ext.extend(Ext.Panel, {
 		  		width:  100,
 		  		height: 100,
 		  		handler: function() {
-		  			app.views.viewport.setActiveItem(app.views.map, {type: 'slide', direction: 'right'});
+		  			app.views.viewport.setActiveItem(app.views.map, {type: 'slide', direction: 'left'});
 		  		}
 		  	},
 		  	{
@@ -46,7 +46,7 @@ app.views.Home = Ext.extend(Ext.Panel, {
 		  		width:  100,
 		  		height: 100,
 		  		handler: function() {
-		  			app.views.viewport.setActiveItem(app.views.twitter, {type: 'slide', direction: 'right'});
+		  			app.views.viewport.setActiveItem(app.views.twitter, {type: 'slide', direction: 'left'});
 		  		}
 		  	},
 		  	{
@@ -78,7 +78,7 @@ app.views.Home = Ext.extend(Ext.Panel, {
 		  		width:  100,
 		  		height: 100,
 		  		handler: function() {
-		  			app.views.viewport.setActiveItem(app.views.payment, {type: 'slide', direction: 'right'});
+		  			app.views.viewport.setActiveItem(app.views.payment, {type: 'slide', direction: 'left'});
 		  		}
 		  	},
 		  	{
@@ -140,7 +140,7 @@ app.views.Home = Ext.extend(Ext.Panel, {
 		  		width:  100,
 		  		height: 100,
 		  		handler: function() {
-		  			app.views.viewport.setActiveItem(app.views.settings, {type: 'slide', direction: 'right'});
+		  			app.views.viewport.setActiveItem(app.views.settings, {type: 'slide', direction: 'left'});
 		  		}
 		  	},
 		  	{

@@ -23,7 +23,7 @@ app.views.Twitter = Ext.extend(Ext.Panel, {
           ui: 'back',
           hidden: app.hideBack || false,
           handler: function() {
-            app.views.viewport.setActiveItem(app.views.home, {type: 'slide', direction: 'left'});
+            app.views.viewport.setActiveItem(app.views.home, {type: 'slide', direction: 'right'});
           }
         }
       ]
