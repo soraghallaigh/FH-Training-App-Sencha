@@ -10,8 +10,6 @@ In this tutorial we will be creating the home view
 
 ## Step 1
 
-The first step is to create two new files. 
-
 In the css directory add a file called 'home.css'. This file will override the Sencha Touch styles that are applied.
 
 	.mapIcon {
@@ -25,3 +23,7 @@ In the css directory add a file called 'home.css'. This file will override the S
 	.mapIcon:active, .mapIcon:hover {
 		opacity: 0.5;
 	}
+
+## Step 2
+
+In the views directory create a view called 'Home.js'
