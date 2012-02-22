@@ -26,4 +26,80 @@ In the css directory add a file called 'home.css'. This file will override the S
 
 ## Step 2
 
-In the views directory create a view called 'Home.js'
+In the views directory create a view called 'Home.js' with the following code;
+
+	app.views.Home = Ext.extend(Ext.Panel, {
+	  title: 'Home',
+	  iconCls: 'home',
+
+	  dockedItems: [
+	  	{
+	  		dock: 'top',
+	  		xtype: 'toolbar',
+	  		title: '<img class="logo" src="app/images/logo.png" />',
+	  	}
+	  ],
+
+	  items: [
+	    {
+	  		xtype: 'panel',
+	  		height: 20
+	  	},
+
+	  	/* 
+	  	 * Google Maps & Twitter Buttons
+	  	 */
+	  	new Ext.Panel({
+	  		height: 100,
+
+	  		layout: {
+		      type: 'hbox',
+		      pack: 'center',  
+		    },
+		    items: [
+		    	{
+			  		xtype: 'spacer'
+			  	},
+			  	{
+			  		xtype: 'button',
+			  		cls: 'mapIcon',
+			  		width:  100,
+			  		height: 100,
+			  		handler: function() {
+			  			
+			  		}
+			  	},
+			  	{
+			  		xtype: 'spacer'
+			  	},
+			  	{
+			  		xtype: 'button',
+			  		cls: 'twitterIcon',
+			  		width:  100,
+			  		height: 100,
+			  		handler: function() {
+			  			
+			  		}
+			  	},
+			  	{
+			  		xtype: 'spacer'
+			  	}
+		    ]
+	  	}),
+
+	  ]
+	});
+
+## Step 3
+
+Updated the index.html page to add references to the css and javascript files we created.
+
+	<link rel="stylesheet" type="text/css" href="app/css/home.css" />
+
+and
+
+	<script type="text/javascript" src="app/views/Home.js"></script>
+
+## Extra Task
+
+Try and add some extra icons to the home screen, some sample images are provided in the images/icons directory.
