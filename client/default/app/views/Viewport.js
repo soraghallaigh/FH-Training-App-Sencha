@@ -81,7 +81,7 @@ app.views.Viewport = Ext.extend(Ext.TabPanel, {
             app.views.twitter,
             app.views.map,      
             app.views.payment,
-            app.views.camera
+            app.views.camera,
             app.views.settings,
           ]
         });
