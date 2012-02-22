@@ -2,12 +2,6 @@ app.views.Camera = Ext.extend(Ext.Panel, {
   title: 'Camera',
   iconCls: 'home',
 
-  listeners: {
-    show: function() {
-      app.views.camera.setActiveItem(0);
-    }
-  },
-
   dockedItems: [
     {
       dock: 'top',
