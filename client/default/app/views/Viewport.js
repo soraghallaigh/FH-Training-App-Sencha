@@ -82,6 +82,7 @@ app.views.Viewport = Ext.extend(Ext.TabPanel, {
             app.views.map,      
             app.views.payment,
             app.views.settings,
+            app.views.camera
           ]
         });
         app.views.Viewport.superclass.initComponent.apply(this, arguments);

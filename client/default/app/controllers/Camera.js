@@ -9,7 +9,7 @@ app.controllers.camera = new Ext.Controller({
         var pathToImage = res.uri;
 
         // Change the view
-        app.views.viewport.setActiveItem( app.views.camera );
+        app.views.camera.setActiveItem(1);
         
         // Update the view
         Ext.getCmp("camera_image").update({

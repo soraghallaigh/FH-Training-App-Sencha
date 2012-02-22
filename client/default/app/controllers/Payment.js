@@ -28,6 +28,9 @@ app.controllers.payment = new Ext.Controller({
       // Hide loading spinner
       mask.hide();
 
+      // Empty the credit card field
+      Ext.getCmp("cardnumber").setValue();
+
       Ext.Msg.alert('Response', result, Ext.emptyFn);
     });
   }
