@@ -3,16 +3,11 @@ app.views.Camera = Ext.extend(Ext.Panel, {
   iconCls: 'home',
   layout: 'fit',
 
-  listeners: {
-    show: function() {
-
-    }
-  },
-
   dockedItems: [
     {
       dock: 'top',
       xtype: 'toolbar',
+      title: '<img class="logo logoOffset" src="app/images/logo.png" />',
       items: [
         {
           text: 'Back',
