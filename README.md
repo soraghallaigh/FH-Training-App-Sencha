@@ -275,21 +275,21 @@ To the controllers section add.
 
 Create an instance of the map view in 'Viewport.js'
 
-  initComponent: function() {
-    // Put instances of cards into app.views namespace
-    Ext.apply(app.views, {
-      home:     new app.views.Home(),
-      map:      new app.views.MapView()
-    });
-    //put instances of cards into viewport
-    Ext.apply(this, {
-      items: [
-        app.views.home,
-        app.views.map
-      ]
-    });
-    app.views.Viewport.superclass.initComponent.apply(this, arguments);
-  }
+	initComponent: function() {
+	  // Put instances of cards into app.views namespace
+	  Ext.apply(app.views, {
+	    home:     new app.views.Home(),
+	    map:      new app.views.MapView()
+	  });
+	  //put instances of cards into viewport
+	  Ext.apply(this, {
+	    items: [
+	      app.views.home,
+	      app.views.map
+	    ]
+	  });
+	  app.views.Viewport.superclass.initComponent.apply(this, arguments);
+	}
 
 ## Step 7
 
