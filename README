@@ -1,14 +1,14 @@
-FeedHenry Sencha Tutorial - v1
+# FeedHenry Sencha Tutorial - v1
 
-# Overview
+## Overview
 
 In this tutorial we will be creating the basic structure of the app. At the end of this tutorial you will know how to;
 
-- Initialize the Sencha touch library   (app/app.js)
-- Create a viewport                     (app/views/Viewport.js)
-- Create a view with some UI components (app/views/Home.js)
+* Initialize the Sencha touch library   (app/app.js)
+* Create a viewport                     (app/views/Viewport.js)
+* Create a view with some UI components (app/views/Home.js)
 
-The Sencha Touch framework is initialized in app.js. 
+The Sencha Touch framework is initialized in app.js:
 
 [[Example Code]]
 Ext.regApplication({
