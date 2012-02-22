@@ -271,6 +271,40 @@ To the controllers section add.
 
 	<script type="text/javascript" src="app/controllers/Map.js"></script>
 
+## Step 6
+
+Create an instance of the map view in 'Viewport.js'
+
+  initComponent: function() {
+    // Put instances of cards into app.views namespace
+    Ext.apply(app.views, {
+      home:     new app.views.Home(),
+      map:      new app.views.MapView()
+    });
+    //put instances of cards into viewport
+    Ext.apply(this, {
+      items: [
+        app.views.home,
+        app.views.map
+      ]
+    });
+    app.views.Viewport.superclass.initComponent.apply(this, arguments);
+  }
+
+## Step 7
+
+In 'Home.js' update the handler to navigate to the map view
+
+  	{
+  		xtype: 'button',
+  		cls: 'mapIcon',
+  		width:  100,
+  		height: 100,
+  		handler: function() {
+  			app.views.viewport.setActiveItem(app.views.map, {type: 'slide', direction: 'left'});
+  		}
+  	},
+
 ## Extra Task
 
 In the 'main.js' file found in the cloud directory, find the following code snippet.
