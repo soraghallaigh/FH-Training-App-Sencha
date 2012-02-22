@@ -1,5 +1,3 @@
-/*
-.x-tabbar .x-tab:last-child { 
-	display: none; 
+.x-panel {
+    -webkit-backface-visibility: hidden;
 }
-*/
