@@ -16,6 +16,7 @@ app.views.Camera = Ext.extend(Ext.Panel, {
       items: [
         {
           text: 'Back',
+          ui: 'back',
           handler: function() {
             app.views.viewport.setActiveItem(app.views.home);
           }
@@ -29,7 +30,7 @@ app.views.Camera = Ext.extend(Ext.Panel, {
           xtype: 'button',
           text: 'Upload Image',
           handler: function() {
-            Ext.Msg.alert('Upload', 'Upload Button Handler.', Ext.emptyFn);
+            Ext.Msg.alert('Upload', 'Upload Image Handler.', Ext.emptyFn);
           }
         }
       ]
