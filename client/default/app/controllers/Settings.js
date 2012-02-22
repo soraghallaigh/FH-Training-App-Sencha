@@ -1,5 +1,8 @@
 app.controllers.settings = new Ext.Controller({
 
+  /* 
+   * Load settings from local storage
+   */
   loadSettings: function() {
     $fh.data({
       act: 'load',
@@ -16,6 +19,9 @@ app.controllers.settings = new Ext.Controller({
     });
   },
 
+  /*
+   * Save settings to local storage
+   */
   saveSettings: function() {
     var settings = {
       title:    Ext.getCmp('title').getValue(),
