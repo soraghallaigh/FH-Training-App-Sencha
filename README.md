@@ -75,3 +75,5 @@ Inside the items array add the following code;
 	}
 
 If you open your index.html page you will now see the following;
+
+![](https://github.com/feedhenry/Training-Demo-App/raw/v1/docs/TestView.png)
