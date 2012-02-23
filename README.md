@@ -30,6 +30,9 @@ In the views directory create a view called 'Home.js' with the following code;
 
 	app.views.Home = Ext.extend(Ext.Panel, {
 	  title: 'Home',
+
+	  // IconCls is used to set a CSS class that applies an image to be used as an icon.
+  	  // This will only be used if we setup a tabBar
 	  iconCls: 'home',
 
 	  dockedItems: [
@@ -41,6 +44,7 @@ In the views directory create a view called 'Home.js' with the following code;
 	  ],
 
 	  items: [
+	    // This a blank panel to act as padding
 	    {
 	  		xtype: 'panel',
 	  		height: 20
@@ -52,6 +56,11 @@ In the views directory create a view called 'Home.js' with the following code;
 	  	new Ext.Panel({
 	  		height: 100,
 
+	  		/*
+  		 	 * Layout specifies how items should be arranged.
+  		 	 * hbox arranges items horizontally across their container
+  		 	 * spacers are used below to layout the icons neatly with padding
+  		 	 */
 	  		layout: {
 		      type: 'hbox',
 		      pack: 'center',  
