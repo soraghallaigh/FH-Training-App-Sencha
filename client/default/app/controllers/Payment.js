@@ -4,6 +4,10 @@ app.controllers.payment = new Ext.Controller({
    * Check if a credit card number if valid
    */
   processPayment: function() {
+    /*
+     * Ext.getCmp will get a component via it's id. 
+     * In this case we get our credit card view fields and their values(getValue())
+     */
     var cardType   = Ext.getCmp("cardtype").getValue();
     var cardNumber = Ext.getCmp("cardnumber").getValue();
 
@@ -15,7 +19,7 @@ app.controllers.payment = new Ext.Controller({
     // Show loading spinner
     mask.show();
 
-    // Call to the cloud
+    // Call to the cloud (main.js in the cloud directory) to run payment() function.
     $fh.act({
       act: 'payment',
       req: {
