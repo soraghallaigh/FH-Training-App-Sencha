@@ -84,7 +84,7 @@ Because we want to take a picture before displaying it within the app we must no
 	    ]
   	}),
 
-## Task - Create the app.views.Camera view.
+## Task - Create the 'app.views.Camera'
 
 Try to create the view that will be populated with our captured image. It should have the same basic structure as previous views. Remember, the camera controller is expecting a component with the 'camera_image' id. Once you have made an attempt scroll down to see a solution.
 
@@ -140,3 +140,43 @@ Now that we have our code completed we need to update index.html to include our 
 Also add the following line under <!-- Controllers --> 
 
 	<script type="text/javascript" src="app/controllers/Camera.js"></script>
+
+Remember to add the camera view to Viewport.js which should appear as follows:
+
+	app.views.Viewport = Ext.extend(Ext.Panel, {
+	  fullscreen: true,
+	  ui: 'light',
+	  layout: 'card',
+
+	  cardSwitchAnimation: {
+	    type: 'slide',
+	    cover: true
+	  },
+
+	  initComponent: function() {
+	    // Put instances of cards into app.views namespace
+	    Ext.apply(app.views, {
+	      home:     new app.views.Home(),
+	      map:      new app.views.MapView(),
+	      twitter:  new app.views.Twitter(),        
+	      payment:  new app.views.Payment(),
+	      camera:   new app.views.Camera()
+	    });
+	    //put instances of cards into viewport
+	    Ext.apply(this, {
+	      items: [
+	        app.views.home,
+	        app.views.payment,
+	        app.views.twitter,
+	        app.views.map,        
+	        app.views.camera
+	      ]
+	    });
+	    app.views.Viewport.superclass.initComponent.apply(this, arguments);
+	  }
+	});
+
+	// Loading Spinner
+	var mask = new Ext.LoadMask(Ext.getBody(), {
+	  msg: "Loading Data"
+	});
