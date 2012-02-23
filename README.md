@@ -9,7 +9,7 @@ This part of the tutorial will teach you how to use save and load settings from 
 * Use many types of input fields and components.
 
 
-![](https://github.com/feedhenry/Training-Demo-App/raw/v7/docs/settingsView.png)
+![](https://github.com/feedhenry/Training-Demo-App/raw/v8/docs/settingsView.png)
 
 ## Step 1
 
