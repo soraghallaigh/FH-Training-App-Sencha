@@ -6,7 +6,7 @@ In this tutorial we will be creating the home view
 
 * Create a view with a number of UI components.
 
-![](https://github.com/feedhenry/Training-Demo-App/raw/v1/docs/HomeView.png)
+![](https://github.com/feedhenry/Training-Demo-App/blob/v2/docs/HomeView.png?raw=true)
 
 ## Step 1
 
@@ -101,7 +101,7 @@ In the views directory create a view called 'Home.js' with the following code;
 
 ## Step 3
 
-Updated the index.html page to add references to the css and javascript files we created.
+Update the index.html page to add references to the css and javascript files we created.
 
 	<link rel="stylesheet" type="text/css" href="app/css/home.css" />
 
