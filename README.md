@@ -104,7 +104,7 @@ Begin by creating the Payment view file in views, name it Payment.js and add the
 
 ## Task
 
-In Step 1 we defined our view, now we must add it to index.html to make Sencha aware it exists. We must also add the Payment view to our Viewport.js and update our Home.js file with an icon for payment if you have not done so already.
+In Step 1 we defined our view, now we must add it to index.html to make Sencha aware it exists. We must also add the Payment view to our Viewport.js and update our Home.js file with an icon for payment and handler to switch to the Payment view. Add these if you have not done so already.
 
 ## Step 2 
 
@@ -175,24 +175,11 @@ The payment function() now needs to be added to our cloud functions in main.js i
 	  });
 	}
 
+## Task
 
-## Step 4
-
-Finally to populate our store with tweets we add the following function to the main.js file in our cloud directory. The app.stores.twitter using the app.models.Twitter will invoke this call to populate the list automatically. 
-
-	function getTweets() {
-	  var username   = 'feedhenry';
-	  var num_tweets = 10;
-	  var url        = 'http://search.twitter.com/search.json?q=' + username;
-
-	  var response = $fh.web({
-	    url: url,
-	    method: 'GET',
-	    allowSelfSignedCert: true
-	  });
-	  return {'data': $fh.parse(response.body).results};
-	}
+Verify what you have made is working by trying to validate a number sequence such as '0000000000000000'. You should receive the output shown below.
 
 
-![](https://github.com/feedhenry/Training-Demo-App/raw/v4/docs/tweets.png)
+![](https://github.com/feedhenry/Training-Demo-App/raw/v5/docs/creditCardCall.png)
+
 
