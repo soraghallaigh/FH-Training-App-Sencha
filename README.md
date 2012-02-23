@@ -12,8 +12,14 @@ In this tutorial we will be creating the basic structure of the app. At the end 
 
 ## Step 1
 
-First we need to initialize the Sencha Touch framework. This code registers the 'app' namespace and also creates an instance of the viewport. This is done by adding the following code to app.js;
+First we need to initialize the Sencha Touch framework. This code registers the 'app' namespace and also creates an instance of the viewport. The viewport will contain any view that will be used in the app. This is done by adding the following code to app.js;
 
+	/* name: 'app' will create the following namespaces:
+	 * app.views,
+	 * app.models,
+	 * app.controllers,
+	 * app.stores
+	 */
 	Ext.regApplication({
 	  name: 'app',
 	  launch: function() {
@@ -37,6 +43,7 @@ Now that the Sencha Touch framework is initialized we can create the viewport. T
 
 	  initComponent: function() {
 	    // Put instances of cards into app.views namespace
+	    // These cards will be other views you have defined
 	    Ext.apply(app.views, {
 
 	    });
