@@ -10,15 +10,18 @@ In this tutorial we will adding a new view for the google maps page.
 
 ## Step 1
 
-In the index.html file before the '<!-- App -->' line add the following code.
+In the index.html file before the '<!-- App -->' line add the following code. This will give us access to the Google Maps API. Using the API is simple with Sencha as they provide a map component that integrates with Google Maps.
 
 	<!-- Google Maps API -->
 	<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=true"></script>
 
 ## Step 2
 
-In the views directory create a view called 'Map.js' with the following code;
-
+In the views directory create a view called 'Map.js' with the following code. This file will create a Sencha map component that will be used in our map view also defined in this file as 'app.views.MapView'.
+	
+	/*
+	 * This creates a map component that will be used to view the map.
+	 */
 	app.views.map = new Ext.Map({
 	  //fullscreen: true,
 	  layout: {
@@ -31,6 +34,10 @@ In the views directory create a view called 'Map.js' with the following code;
 	  }
 	});
 
+	/*
+	 * This is our map view. Notice that it's items contain our 'app.views.map' that we 
+	 * defined ealier.
+	 */
 	app.views.MapView = Ext.extend(Ext.Panel, {
 	  title: 'Map',
 	  iconCls: 'home',
@@ -38,6 +45,11 @@ In the views directory create a view called 'Map.js' with the following code;
 	   type: 'fit'
 	  },
 
+	  /*
+	   * Listeners are applied to components to perform functions when a specific 
+	   * event occurs. Here for example when the MapView is shown (show), we call
+	   * the Map.js controller's 'getLocation' function.
+	   */
 	  listeners: {
 	    activate: function() {
 	      google.maps.event.trigger(Ext.getCmp("map").map, 'resize');
@@ -51,6 +63,10 @@ In the views directory create a view called 'Map.js' with the following code;
 	  	}
 	  },
 
+	  /*
+       * Here we add a toolbar with a back button.
+   	   * ui: 'back' tells sencha to style the button as a back button
+  	   */
 	  dockedItems: [
 	  	{
 	  		dock: 'top',
@@ -76,7 +92,7 @@ In the views directory create a view called 'Map.js' with the following code;
 
 ## Step 3 
 
-In the controllers directory create a new file called 'Map.js' with the following code.
+In the controllers directory create a new file called 'Map.js' with the following code. This file contains code that controls the map functionality. This uses some of the FeedHenry APIs such as 'fh.data' for loading stored map points from local storage.
 
 	app.controllers.map = new Ext.Controller({
 
@@ -261,7 +277,7 @@ In the cloud directory add the following code to the main.js file.
 
 ## Step 5
 
-Updated the references to these new files in the index.html page
+Update the references to these new files in the index.html page so Sencha is aware of them.
 
 To the views section add.
 
