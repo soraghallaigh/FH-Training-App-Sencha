@@ -2,6 +2,9 @@ app.views.Twitter = Ext.extend(Ext.Panel, {
   title: 'Twitter',
   iconCls: 'time',
   width: '100%',
+  /*
+   * Layout vbox is used to arrnage items (tweets) stacked above one another
+   */
   layout: {
     type: 'vbox'
   },
@@ -30,6 +33,10 @@ app.views.Twitter = Ext.extend(Ext.Panel, {
     }
   ],
   
+  /*
+   * We create a Sencha list component here. A list requires a store as it's data to display.
+   * Lists also require an itemTpl that styles each list item. 
+   */
   items: [
     {
       xtype: 'list',
