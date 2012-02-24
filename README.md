@@ -12,7 +12,7 @@ In this version of the tutorial we will restructure the app appearance. Instead 
 
 ## Step 1 
 
-Begin by modifying the Viewport.js so that we only have Twitter, Map, Payment and Settings views included. As we will be using a Tab Panel we must refelect this by changing the Viewport to extend Ext.TabPanel and include a TabBar component.  
+Begin by modifying the Viewport.js so that we only have Twitter, Map, Payment and Settings views included. As we will be using a Tab Panel we must refelect this by changing the Viewport.js to extend Ext.TabPanel and include a TabBar component.  
 
 	app.views.Viewport = Ext.extend(Ext.TabPanel, {
 
@@ -63,7 +63,7 @@ Begin by modifying the Viewport.js so that we only have Twitter, Map, Payment an
 
 ## Step 2
 
-You will notice that our app still contains back buttons. These are not necessary any more as we are using a TabPanel. An simple way to remove these buttons is to add the following code to Viewport.js. This will cause the hidden property for any back buttons using 'hidden: app.hideBack || false' to be true therefore hiding the buttons.
+You will notice that our app still contains back buttons. These are not necessary any more as we are using a TabPanel. A simple way to remove these buttons is to add the following code to Viewport.js. This will cause the hidden property for any back buttons using 'hidden: app.hideBack || false' to be true therefore hiding the buttons.
 
 	/*
 	 * Hide the back buttons
@@ -72,14 +72,21 @@ You will notice that our app still contains back buttons. These are not necessar
 
 ## Task - Updating the icons
 
-Right now our icons assigned to the different views are not appropriate. Try to update the icons by changing the 'iconCls' property of the views. Many of the icon type available to use can be seen in the Sencha <a href = "http://dev.sencha.com/deploy/touch/examples/kitchensink/"> Kitchen Sink </a>demo. Below are the classes we have used.
+Right now the icons assigned to the different views do not reflect their function. Try to update the icons by changing the 'iconCls' property of the views. Many of the icon type available to use can be seen in the Sencha <a href = "http://dev.sencha.com/deploy/touch/examples/kitchensink/"> Kitchen Sink </a>demo. Below are the classes we have used.
 
-
+	// Settings view
 	iconCls: 'settings',
+
+	// Map view
 	iconCls: 'locate',
+
+	// Payment view
 	iconCls: 'action',
+
+	// Home/Twitter view
 	iconCls: 'home',
 
 
 The app with updated icons.
+
 ![](https://github.com/feedhenry/Training-Demo-App/raw/v9/docs/tabPanelIcons.png)
