@@ -1,10 +1,17 @@
 app.views.Home = Ext.extend(Ext.Panel, {
   title: 'Home',
 
-  // IconCls is used to set a CSS class that applies an image to be used as an icon.
-  // This will only be used if we setup a tabBar
+  /*
+   * IconCls is used to set a CSS class that applies an image to be used as an icon.
+   * This will only be used if we setup a tabBar
+   */
   iconCls: 'home',
 
+  /*
+   * dockedItems are items that are docked to the top or bottom of a panel/view
+   * The 'xtype' tells Sencha what type of component we're going to use.
+   * Examples of xtype include 'panel', 'toolbar', 'selectfield' and 'list'.
+   */
   dockedItems: [
   	{
   		dock: 'top',
@@ -13,6 +20,10 @@ app.views.Home = Ext.extend(Ext.Panel, {
   	}
   ],
 
+  /*
+   * items to be added to the panel, 
+   * these can also take an xtype
+   */
   items: [
     // This a blank panel to act as padding
     {

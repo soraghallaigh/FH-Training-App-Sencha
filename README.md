@@ -5,12 +5,14 @@
 In this tutorial we will be creating the home view
 
 * Create a view with a number of UI components.
+* Learn about xtype
+* Use CSS to style our Sencha components. 
 
 ![](https://github.com/feedhenry/Training-Demo-App/blob/v2/docs/HomeView.png?raw=true)
 
 ## Step 1
 
-In the css directory add a file called 'home.css'. This file will override the Sencha Touch styles that are applied.
+In the css directory add a file called 'home.css'. This file will override the Sencha Touch styles that are applied and style our icon as necessary. 
 
 	.mapIcon {
 	  width: 100px !important;
@@ -26,15 +28,22 @@ In the css directory add a file called 'home.css'. This file will override the S
 
 ## Step 2
 
-In the views directory create a view called 'Home.js' with the following code;
+In the views directory create a view called 'Home.js' with the following code. This will create our Home panel that holds icons.
 
 	app.views.Home = Ext.extend(Ext.Panel, {
 	  title: 'Home',
 
-	  // IconCls is used to set a CSS class that applies an image to be used as an icon.
-  	  // This will only be used if we setup a tabBar
+	  /*
+	   * IconCls is used to set a CSS class that applies an image to be used as an icon.
+	   * This will only be used if we setup a tabBar
+	   */
 	  iconCls: 'home',
 
+	  /*
+	   * dockedItems are items that are docked to the top or bottom of a panel/view
+	   * The 'xtype' tells Sencha what type of component we're going to use.
+	   * Examples of xtype include 'panel', 'toolbar', 'selectfield' and 'list'.
+	   */
 	  dockedItems: [
 	  	{
 	  		dock: 'top',
@@ -43,6 +52,10 @@ In the views directory create a view called 'Home.js' with the following code;
 	  	}
 	  ],
 
+	  /*
+	   * items to be added to the panel, 
+	   * these can also take an xtype
+	   */
 	  items: [
 	    // This a blank panel to act as padding
 	    {
@@ -57,10 +70,10 @@ In the views directory create a view called 'Home.js' with the following code;
 	  		height: 100,
 
 	  		/*
-  		 	 * Layout specifies how items should be arranged.
-  		 	 * hbox arranges items horizontally across their container
-  		 	 * spacers are used below to layout the icons neatly with padding
-  		 	 */
+	  		 * Layout specifies how items should be arranged.
+	  		 * hbox arranges items horizontally across their container
+	  		 * spacers are used below to layout the icons neatly with padding
+	  		 */
 	  		layout: {
 		      type: 'hbox',
 		      pack: 'center',  
@@ -113,5 +126,5 @@ and
 
 ## Extra Task
 
-Try and add some extra icons to the home screen, some sample images are provided in the images/icons directory.
+Try and add some extra icons to the home screen, some sample images are provided in the images/icons directory. Add the necessary Twitter icon as shown in the image at the beggining of this tutorial.
 
