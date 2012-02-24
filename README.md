@@ -301,7 +301,9 @@ To the controllers section add.
 
 ## Task 
 
-Try updating your Viewport.js and Home.js files to allow navigation to the Map View. This is the same concept as navigating to the twitter view. When you have tried this move on to the next steps for a solution.
+Try updating your Viewport.js and Home.js files to allow navigation to the Map View. This is the same concept as including the home view. You will need to include a handler function in Home.js on the map icon that uses 'app.views.viewport.setActiveItem(view, animation)' function.
+
+When you have tried this move on to the next steps for a solution.
 
 ## Step 6
 
