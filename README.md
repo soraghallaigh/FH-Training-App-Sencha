@@ -76,7 +76,7 @@ The code below should be copied into a settings.js file in controllers.
 
 ## Task
 
-Now we need to create our view for settings. This will be a form containing multiple input types. We will read the value of these inputs and use these to be saved as the 'settings' key value by the controller. The Home.js and Viewport.js need to be updated to include an icon and the new settings view respectively. Try do this. Remember you need a Settings.js file in views and controllers and must also update the index.html which should now look as follows.
+Now we need to create our view for settings. This will be a form containing multiple input types, feel free to use any you like for now. We will read the value of these inputs and use these to be saved as the 'settings' key value by the controller. The Home.js and Viewport.js need to be updated to include an icon and the new settings view respectively. Try do this. Remember you need a Settings.js file in views and controllers and must also update the index.html which should now look as follows.
 
 	<head>
 	<title>FH Training</title>
