@@ -2,15 +2,17 @@
 
 ## Overview
 
-In this tutorial we will adding a new view for a Twitter feed page.
+In this tutorial we will adding a new view for a Twitter feed page. You will learn to use stores, models and further use of FeedHenry APIs.
 
 * Integrate an app with Twitter to pull tweets with a specified user name.
+* Learn about Sencha stores and models.
+* Use the $fh.web() function to make a web request for your app.
 
 ![](https://github.com/feedhenry/Training-Demo-App/raw/v4/docs/twitterView.png)
 
 ## Step 1
 
-Begin by creating the Twitter view file in views, name it Twitter.js and add the following code.
+Begin by creating the Twitter view file in views, name it Twitter.js and add the following code. This view uses a new layout type, 'vbox' which is used to stack elements vertically. We also will use the Sencha 'List' component to display tweets.
 	
 	  app.views.Twitter = Ext.extend(Ext.Panel, {
 	  title: 'Twitter',
@@ -65,7 +67,7 @@ Begin by creating the Twitter view file in views, name it Twitter.js and add the
 
 ## Step 2
 
-You will have seen from Step 1 that we added a list component to the Twitter view. This list is using a store, app.stores.twitter. We must define this store. In the models folder create a file called Twitter.js and add the following code. In the code below we define a proxy for the model. The proxy is used to control loading and saving data to the store. The proxy here relies on a FeedHenry API call fh.act. The data format is JSON and the function name is 'getTweets'. The device will use fhact to call the funtion from our cloud main.js file.
+You will have seen from Step 1 that we added a list component to the Twitter view. This list is using a store, app.stores.twitter. We must define this store. In the models folder create a file called Twitter.js and add the code below. In this code we define a proxy for the model. The proxy is used to control loading and saving data to the store. The proxy here relies on a FeedHenry API call $fh.act(). The data format is JSON and the function name is 'getTweets'. The device will use $fh.act() to call the funtion from the Cloud. The function is defined in main.js file under the cloud directory.
 	
 
 	/*
@@ -90,10 +92,37 @@ You will have seen from Step 1 that we added a list component to the Twitter vie
 	  autoLoad: true,
 	});
 
+## Step 5 
 
-## Step 3 
+To populate our store with tweets we add the following function to the main.js file in our cloud directory. The app.stores.twitter using the app.models.Twitter will invoke this call to populate the list automatically. 
 
-Make sure to update index.html to include the new files we have made. Add the following line under our app.js include.
+	function getTweets() {
+	  var username   = 'feedhenry';
+	  var num_tweets = 10;
+	  var url        = 'http://search.twitter.com/search.json?q=' + username;
+
+	  var response = $fh.web({
+	    url: url,
+	    method: 'GET',
+	    allowSelfSignedCert: true
+	  });
+	  return {'data': $fh.parse(response.body).results};
+	}
+
+
+## Task
+
+Try to finish out the adding of the Twitter section of the app. This will be similar to adding our Map view from v3. Remember the steps invloved:
+
+* Update index.html
+* Add the view to Viewport.js
+* A button needs to be added to the homepage and styled with CSS.
+* The button requires a handler with setActiveItem().
+
+
+## Step 4 
+
+These steps are needed if you have not finished adding the Twitter page. Make sure to update index.html to include the new files we have made. Add the following line under our app.js include.
 
 	<!-- Models -->
 	<script type="text/javascript" src="app/models/Twitter.js"></script> 
@@ -122,31 +151,13 @@ Viewport.js now needs to be updated to include our Twitter view. Insert the foll
 	    app.views.Viewport.superclass.initComponent.apply(this, arguments);
 	 }
 
-## Step 4
+## Step 5
 
 Home.js also needs to be updated. If you haven't added a Twitter button do so now and add the following handler function to it. 
 
 	handler: function() {
 			  	app.views.viewport.setActiveItem(app.views.twitter, {type: 'slide', direction: 'left'});
 			  }
-
-
-## Step 5 
-
-Finally to populate our store with tweets we add the following function to the main.js file in our cloud directory. The app.stores.twitter using the app.models.Twitter will invoke this call to populate the list automatically. 
-
-	function getTweets() {
-	  var username   = 'feedhenry';
-	  var num_tweets = 10;
-	  var url        = 'http://search.twitter.com/search.json?q=' + username;
-
-	  var response = $fh.web({
-	    url: url,
-	    method: 'GET',
-	    allowSelfSignedCert: true
-	  });
-	  return {'data': $fh.parse(response.body).results};
-	}
 
 
 ![](https://github.com/feedhenry/Training-Demo-App/raw/v4/docs/tweets.png)
