@@ -16,6 +16,9 @@ var MARKERS = {
   ]
 };
 
+/*
+ * If we have points cached in the cloud load them.
+ */
 function getCachedPoints() {
   var ret = $fh.cache({
     "act": "load",
@@ -24,6 +27,9 @@ function getCachedPoints() {
   return ret.val;
 }
 
+/*
+ * Similar to the above function but instead we are saving the points
+ */
 function cachePoints(hash, data) {
   var obj = {
     "hash": hash,
@@ -38,6 +44,9 @@ function cachePoints(hash, data) {
   });
 }
 
+ /* 
+  * This function would be called from the device using an act call.
+  */
 function getPoints() {
   var response = {};
   var cache    = getCachedPoints();

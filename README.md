@@ -2,9 +2,11 @@
 
 ## Overview
 
-In this tutorial we will adding a new view for the google maps page.
+In this tutorial we will adding a new view for the Google Maps page. You will learn the following:
 
-* Integrate an app with the google maps API
+* Integrate an app with the Google Maps API
+* Use Sencha controllers
+* Learn to use FeedHenry APIs
 
 ![](https://github.com/feedhenry/Training-Demo-App/raw/v3/docs/MapView.png)
 
@@ -92,7 +94,7 @@ In the views directory create a view called 'Map.js' with the following code. Th
 
 ## Step 3 
 
-In the controllers directory create a new file called 'Map.js' with the following code. This file contains code that controls the map functionality. This uses some of the FeedHenry APIs such as 'fh.data' for loading stored map points from local storage.
+In the controllers directory create a new file called 'Map.js' with the following code. This file contains code that controls the map functionality. This uses some of the FeedHenry APIs such as 'fh.data' for loading stored map points from local storage. Examine this file closely and read the API information <a href="http://docs.feedhenry.com/api-reference/">here</a>.
 
 	app.controllers.map = new Ext.Controller({
 
@@ -108,7 +110,7 @@ In the controllers directory create a new file called 'Map.js' with the followin
 	  },
 
 	  /*
-	   * Load cached points from local storage
+	   * Load cached points from local storage using the fh.data() API call
 	   */
 	  loadPoints: function() {
 	    $fh.data({
@@ -129,7 +131,8 @@ In the controllers directory create a new file called 'Map.js' with the followin
 	  },
 
 	  /*
-	   * Get points from the cloud
+	   * Get points from the cloud using fh.act() which will call a function from
+	   * the cloud in our main.js file.
 	   */
 	  getPoints: function(cache, hash) {
 	    var map = Ext.getCmp("map").map;
@@ -202,7 +205,7 @@ In the controllers directory create a new file called 'Map.js' with the followin
 
 ## Step 4
 
-In the cloud directory add the following code to the main.js file.
+Now we are going to implement the Cloud features of the FeedHenry platform. You might have noticed in the Map controller we call the FeedHenry $fh.act() call. This allows us to call a function from the server (cloud), read more about this <a href="http://docs.feedhenry.com/api-reference/actions/">here</a>. In the cloud directory add the following code to the main.js file.
 
 	/*
 	 * Maps
@@ -222,6 +225,9 @@ In the cloud directory add the following code to the main.js file.
 	  ]
 	};
 
+	/*
+	 * If we have points cached in the cloud load them.
+	 */
 	function getCachedPoints() {
 	  var ret = $fh.cache({
 	    "act": "load",
@@ -230,6 +236,9 @@ In the cloud directory add the following code to the main.js file.
 	  return ret.val;
 	}
 
+	/*
+	 * Similar to the above function but instead we are saving the points
+	 */
 	function cachePoints(hash, data) {
 	  var obj = {
 	    "hash": hash,
@@ -244,6 +253,9 @@ In the cloud directory add the following code to the main.js file.
 	  });
 	}
 
+	 /* 
+	  * This function would be called from the device using an act call.
+	  */
 	function getPoints() {
 	  var response = {};
 	  var cache    = getCachedPoints();
@@ -287,9 +299,13 @@ To the controllers section add.
 
 	<script type="text/javascript" src="app/controllers/Map.js"></script>
 
+## Task 
+
+Try updating your Viewport.js and Home.js files to allow navigation to the Map View. This is the same concept as navigating to the twitter view. When you have tried this move on to the next steps for a solution.
+
 ## Step 6
 
-Create an instance of the map view in 'Viewport.js'
+These steps are only necessary if you have not managed to successfully update your app to allow viewing of the Map View. Create an instance of the map view in 'Viewport.js'
 
 	initComponent: function() {
 	  // Put instances of cards into app.views namespace
