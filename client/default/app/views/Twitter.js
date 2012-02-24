@@ -1,6 +1,6 @@
 app.views.Twitter = Ext.extend(Ext.Panel, {
   title: 'Twitter',
-  iconCls: 'twitter1',
+  iconCls: 'home',
   width: '100%',
   layout: {
     type: 'vbox'

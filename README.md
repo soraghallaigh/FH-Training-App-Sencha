@@ -69,3 +69,13 @@ You will notice that our app still contains back buttons. These are not necessar
 	 * Hide the back buttons
 	 */
 	app.hideBack = true;
+
+## Task - Updating the icons
+
+Right now our icons assigned to the different views are not appropriate. Try to update the icons by changing the 'iconCls' property of the views. Many of the icon type available to use can be seen in the Sencha <a href = "http://dev.sencha.com/deploy/touch/examples/kitchensink/"> Kitchen Sink </a>demo. Below are the classes we have used.
+
+
+	iconCls: 'settings',
+	iconCls: 'locate',
+	iconCls: 'action',
+	iconCls: 'home',
