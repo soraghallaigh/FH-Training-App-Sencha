@@ -6,6 +6,66 @@ In this version of the tutorial we will restructure the app appearance. Instead 
 
 * Create an App that uses a tab panel view.
 * Add items to a tab panel.
-* Handle orientation changes within an app.
 
-![](https://github.com/feedhenry/Training-Demo-App/raw/v1/docs/HomeView.png)
+![](https://github.com/feedhenry/Training-Demo-App/raw/v9/docs/tabPanel.png)
+
+
+## Step 1 
+
+Begin by modifying the Viewport.js so that we only have Twitter, Map, Payment and Settings views included. As we will be using a Tab Panel we must refelect this by changing the Viewport to extend Ext.TabPanel and include a TabBar component.  
+
+	app.views.Viewport = Ext.extend(Ext.TabPanel, {
+
+	    /*
+	     * New component added to hold our icons.
+	     * Dock specifies the location of the tab bar, 
+	     * In iOS this will be bottom and usually top for Android as the themes follow this structure
+	     */
+	    tabBar: {
+	      dock: 'bottom',
+	      layout: {
+	          pack: 'center'
+	      }
+	    },
+
+	    fullscreen: true,
+	    ui: 'light',
+	    cardSwitchAnimation: {
+	        type: 'slide',
+	        cover: true
+	    },
+	    
+	    initComponent: function() {
+	        //put instances of cards into app.views namespace
+	        Ext.apply(app.views, {
+	          twitter:  new app.views.Twitter(), 
+	          settings: new app.views.Settings(),
+	          map:      new app.views.MapView(),
+	          payment:  new app.views.Payment(),
+	        });
+	        //put instances of cards into viewport
+	        Ext.apply(this, {
+	          items: [
+	            app.views.twitter,
+	            app.views.map,      
+	            app.views.payment,
+	            app.views.settings,
+	          ]
+	        });
+	        app.views.Viewport.superclass.initComponent.apply(this, arguments);
+	    },
+	});
+
+	// Loading Spinner
+	var mask = new Ext.LoadMask(Ext.getBody(), {
+	  msg: "Loading Data"
+	});
+
+## Step 2
+
+You will notice that our app still contains back buttons. These are not necessary any more as we are using a TabPanel. An simple way to remove these buttons is to add the following code to Viewport.js. This will cause the hidden property for any back buttons using 'hidden: app.hideBack || false' to be true therefore hiding the buttons.
+
+	/*
+	 * Hide the back buttons
+	 */
+	app.hideBack = true;

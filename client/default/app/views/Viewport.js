@@ -1,13 +1,22 @@
-// Hide the back buttons
+/*
+ * Hide the back buttons
+ */
 app.hideBack = true;
 
 app.views.Viewport = Ext.extend(Ext.TabPanel, {
+
+    /*
+     * New component added to hold our icons.
+     * Dock specifies the location of the tab bar, 
+     * In iOS this will be bottom and usually top for Android as the themes follow this structure
+     */
     tabBar: {
       dock: 'bottom',
       layout: {
           pack: 'center'
       }
     },
+
     fullscreen: true,
     ui: 'light',
     cardSwitchAnimation: {
@@ -22,7 +31,6 @@ app.views.Viewport = Ext.extend(Ext.TabPanel, {
           settings: new app.views.Settings(),
           map:      new app.views.MapView(),
           payment:  new app.views.Payment(),
-          camera:   new app.views.Camera()
         });
         //put instances of cards into viewport
         Ext.apply(this, {
@@ -35,6 +43,10 @@ app.views.Viewport = Ext.extend(Ext.TabPanel, {
         });
         app.views.Viewport.superclass.initComponent.apply(this, arguments);
     },
+    /*
+     * I can't see the signifigance of this, commenting it out seems to make no difference to the 
+     * app when built. Ask Sean maybe -- Evan -- 
+     */
     /*layoutOrientation : function(orientation, w, h) {
         app.views.Viewport.superclass.layoutOrientation.call(this, orientation, w, h);        
     }*/
