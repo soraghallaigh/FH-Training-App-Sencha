@@ -92,7 +92,7 @@ You will have seen from Step 1 that we added a list component to the Twitter vie
 	  autoLoad: true,
 	});
 
-## Step 5 
+## Step 3 
 
 To populate our store with tweets we add the following function to the main.js file in our cloud directory. The app.stores.twitter using the app.models.Twitter will invoke this call to populate the list automatically. 
 
