@@ -1,8 +1,12 @@
-# FeedHenry Sencha Tutorial - v1
+# FeedHenry Sencha Tutorial - v6
 
 ## Overview
 
-For this part of the tutorial we will create a view with access to the camera. The FeedHenry Camera API, $fh.cam, is used to do this.
+For this part of the tutorial we will create a view with access to the camera. The FeedHenry Camera API, $fh.cam(), is used to do this.
+
+* Learn to use $fh.cam()
+*
+*
 
 ![](https://github.com/feedhenry/Training-Demo-App/raw/v1/docs/cameraView.png)
 
