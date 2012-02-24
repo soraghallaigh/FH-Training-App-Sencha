@@ -67,13 +67,13 @@ Now that the Sencha Touch framework is initialized we can create the viewport. C
 	  }
 	});
 
-/*
- * This variable will hold a loading spinner (Load Mask). 
- * When necessary we can call mask.show() for loading pages.
- */
-var mask = new Ext.LoadMask(Ext.getBody(), {
-  msg: "Loading Data"
-});
+	/*
+	 * This variable will hold a loading spinner (Load Mask). 
+	 * When necessary we can call mask.show() for loading pages.
+	 */
+	var mask = new Ext.LoadMask(Ext.getBody(), {
+	  msg: "Loading Data"
+	});
 
 
 We add any views we create to the instance of the viewport. The first view we create is the 'Home' view, this view contains a number of buttons which (In later versions) will go to different views.
