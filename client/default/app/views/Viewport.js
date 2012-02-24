@@ -11,7 +11,7 @@ app.views.Viewport = Ext.extend(Ext.TabPanel, {
      * In iOS this will be bottom and usually top for Android as the themes follow this structure
      */
     tabBar: {
-      dock: 'top',
+      dock: 'bottom',
       layout: {
           pack: 'center'
       }
