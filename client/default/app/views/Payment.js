@@ -1,6 +1,6 @@
 app.views.Payment = Ext.extend(Ext.Panel, {
   title: 'Payment',
-  iconCls: 'shop',
+  iconCls: 'cart',
   layout: 'fit',
   scroll: 'vertical',
 
