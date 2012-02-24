@@ -2,9 +2,11 @@
 
 ## Overview
 
-In this tutorial we will adding a new view for credit card validation.
+In this tutorial we will adding a new view for credit card validation. This will demonstrate the use of input fields and web requests using $fh.web().
 
 * Integrate an app with a Credit Card validation service 'CCChecker'.
+* Learn to use input fields.
+* Use $ fh.web()
 
 ![](https://github.com/feedhenry/Training-Demo-App/raw/v5/docs/creditCard.png)
 

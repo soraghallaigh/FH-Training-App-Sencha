@@ -34,8 +34,10 @@ app.views.Payment = Ext.extend(Ext.Panel, {
       xtype: 'form',
       items: [
         {
-          // The fieldset is used to hold fields as items. 
-          // The main purpose of the fieldset is to add a title and to group fields.
+          /*
+           * The fieldset is used to hold fields as items. 
+           * The main purpose of the fieldset is to add a title and to group fields.
+           */
           xtype: 'fieldset',
           title: 'Payment Info',
           instructions: 'Please enter the payment information above.',
