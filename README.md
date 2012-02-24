@@ -8,7 +8,7 @@ As part of this training Session we are going to create a simple Sencha Touch 1.
 
 To begin this tutorial download the boilerplate code from <a href="https://github.com/feedhenry/Training-Demo-App/zipball/boilerplate">this link</a>. Copy the code to your workspace once unzipped. This represents our basic file structure for the entire tutorial.
 
-## Step 3
+## Step 2
 
 You are now setup to begin the tutorial. To begin switch to the v1 branch view or click <a href="https://github.com/feedhenry/Training-Demo-App/tree/v1">here</a>. See below for how to switch branches
 
