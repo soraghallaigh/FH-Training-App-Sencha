@@ -35,9 +35,9 @@ app.views.Viewport = Ext.extend(Ext.TabPanel, {
         });
         app.views.Viewport.superclass.initComponent.apply(this, arguments);
     },
-    layoutOrientation : function(orientation, w, h) {
+    /*layoutOrientation : function(orientation, w, h) {
         app.views.Viewport.superclass.layoutOrientation.call(this, orientation, w, h);        
-    }
+    }*/
 });
 
 // Loading Spinner
