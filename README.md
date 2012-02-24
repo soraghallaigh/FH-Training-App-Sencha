@@ -79,3 +79,7 @@ Right now our icons assigned to the different views are not appropriate. Try to 
 	iconCls: 'locate',
 	iconCls: 'action',
 	iconCls: 'home',
+
+
+The app with updated icons.
+![](https://github.com/feedhenry/Training-Demo-App/raw/v9/docs/tabPanelIcons.png)
