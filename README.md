@@ -5,7 +5,7 @@ As part of this training Session we are going to create a simple Sencha Touch 1.
 
 ## Step 1 
 
-To begin this tutorial clone the following repository link into your workspace. So cd to your workspace directory then issue the following command:
+To begin this tutorial clone the following repository link into your workspace. This repository contains the code needed to complete this tutorial. cd to your workspace directory then issue the following command:
 
 	Command: git clone git@github.com:feedhenry/Training-Demo-App.git
 
