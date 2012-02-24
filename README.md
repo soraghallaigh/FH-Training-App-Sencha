@@ -2,7 +2,7 @@
 
 ## Overview
 
-In this tutorial we will be creating the basic structure of the app. At the end of this tutorial you will know how to;
+In this tutorial we will be creating the basic structure of the app. At the end of this tutorial you will know how to:
 
 * Initialize the Sencha touch library   (app/app.js)
 * Create a viewport                     (app/views/Viewport.js)
@@ -12,7 +12,7 @@ In this tutorial we will be creating the basic structure of the app. At the end 
 
 ## Step 1
 
-First we need to initialize the Sencha Touch framework. This code registers the 'app' namespace and also creates an instance of the viewport. The viewport will contain any view that will be used in the app. This is done by adding the following code to app.js;
+First we need to initialize the Sencha Touch framework. This code registers the 'app' namespace and also creates an instance of the viewport. The viewport will contain any view that will be used in the app. This is done by adding the following code to app.js.
 
 	/* name: 'app' will create the following namespaces:
 	 * app.views,
@@ -29,25 +29,35 @@ First we need to initialize the Sencha Touch framework. This code registers the 
 
 ## Step 2
 
-Now that the Sencha Touch framework is initialized we can create the viewport. The viewport will contain any views we use in the app.
+Now that the Sencha Touch framework is initialized we can create the viewport. Create a file 'Viewport.js' in the views directory. Think of the viewport as a container that will hold any views/pages we will use in the app. The comments below explain the signifigance of each part of code.
 
+	/*
+	 * Add our Viewport to the views namespace. 
+	 * The Viewport is going to be a Panel, a type of Sencha component.
+	 */
 	app.views.Viewport = Ext.extend(Ext.Panel, {
 	  fullscreen: true,
 	  ui: 'light',
 	  layout: 'card',
 
+	  /*
+	   * The animation type, if any, that will be used for swtching between the
+	   * cards we have stored in the Viewport.
+	   */
 	  cardSwitchAnimation: {
 	    type: 'slide',
 	    cover: true
 	  },
 
 	  initComponent: function() {
-	    // Put instances of cards into app.views namespace
-	    // These cards will be other views you have defined
+	    /*
+	     * Put instances of cards into app.views namespace
+	     * These cards will be other views you have defined
+	     */
 	    Ext.apply(app.views, {
 
 	    });
-	    //put instances of cards into viewport
+	    // Put instances of cards (views) into viewport here
 	    Ext.apply(this, {
 	      items: [
 
@@ -57,10 +67,14 @@ Now that the Sencha Touch framework is initialized we can create the viewport. T
 	  }
 	});
 
-	// Loading Spinner
-	var mask = new Ext.LoadMask(Ext.getBody(), {
-	  msg: "Loading Data"
-	});
+/*
+ * This variable will hold a loading spinner (Load Mask). 
+ * When necessary we can call mask.show() for loading pages.
+ */
+var mask = new Ext.LoadMask(Ext.getBody(), {
+  msg: "Loading Data"
+});
+
 
 We add any views we create to the instance of the viewport. The first view we create is the 'Home' view, this view contains a number of buttons which (In later versions) will go to different views.
 
