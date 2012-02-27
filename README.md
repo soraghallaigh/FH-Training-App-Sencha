@@ -8,7 +8,7 @@ In this tutorial we will adding a new view for a Twitter feed page. You will lea
 * Learn about Sencha stores and models.
 * Use the $fh.web() function to make a web request for your app.
 
-![](https://github.com/feedhenry/Training-Demo-App/raw/v4/docs/twitterView.png)
+![](https://github.com/feedhenry/FH-Training-App-Sencha/raw/v4/docs/twitterView.png)
 
 ## Step 1
 
@@ -49,6 +49,13 @@ Begin by creating the Twitter view file in views, name it Twitter.js and add the
 	    }
 	  ],
 	  
+	  /*
+	   * Below we declare a list. It's store is set to our twitter store. 
+	   * This store is defined in another file. 
+	   * The itemTpl is a template that defines how list items are styled.
+	   * Anything in the tpl surrounded by {} means that the store 
+	   * contains this variable and to populate this list item using that data.
+	   */
 	  items: [
 	    {
 	      xtype: 'list',
@@ -67,12 +74,13 @@ Begin by creating the Twitter view file in views, name it Twitter.js and add the
 
 ## Step 2
 
-You will have seen from Step 1 that we added a list component to the Twitter view. This list is using a store, app.stores.twitter. We must define this store. In the models folder create a file called Twitter.js and add the code below. In this code we define a proxy for the model. The proxy is used to control loading and saving data to the store. The proxy here relies on a FeedHenry API call $fh.act(). The data format is JSON and the function name is 'getTweets'. The device will use $fh.act() to call the funtion from the Cloud. The function is defined in main.js file under the cloud directory.
+You will have seen from Step 1 that we added a list component to the Twitter view. This list is using a store, app.stores.twitter. We must define this store. In the models folder create a file called Twitter.js and add the code below. In this code we define a proxy for the model. The proxy is used to control loading and saving data to the store. The proxy here relies on a FeedHenry API call $fh.act(). The data format is JSON and the function name is 'getTweets'. The device will use $fh.act() to call the funtion from the Cloud. The function is defined in main.js file under the cloud directory. 
 	
 
 	/*
  	 * Here we create a model using regModel. 
  	 * The model will be used by a store as a template for it's data format.
+ 	 * See that the fields here correspond to data the itemTpl will need.
  	 */
 	app.models.Twitter = Ext.regModel('app.models.Twitter', {
 	  fields: ['from_user', 'text', 'profile_image_url', 'from_user_name'],
@@ -85,7 +93,7 @@ You will have seen from Step 1 that we added a list component to the Twitter vie
 
 	/*
 	 * Create the Twitter store for tweets using the above model. 
-	 * The store is empty, but will be populated using a function.
+	 * The store is empty, but will be populated using the model proxy.
 	 */
 	app.stores.twitter = new Ext.data.Store({
 	  model: 'app.models.Twitter',
@@ -94,7 +102,7 @@ You will have seen from Step 1 that we added a list component to the Twitter vie
 
 ## Step 3 
 
-To populate our store with tweets we add the following function to the main.js file in our cloud directory. The app.stores.twitter using the app.models.Twitter will invoke this call to populate the list automatically. 
+To populate our store with tweets we add the following function to the main.js file in our cloud directory. The app.stores.twitter using the app.models.Twitter will invoke this call to populate the list automatically due to it's proxy. 
 
 	function getTweets() {
 	  var username   = 'feedhenry';
@@ -160,5 +168,5 @@ Home.js also needs to be updated. If you haven't added a Twitter button do so no
 			  }
 
 
-![](https://github.com/feedhenry/Training-Demo-App/raw/v4/docs/tweets.png)
+![](https://github.com/feedhenry/FH-Training-App-Sencha/raw/v4/docs/tweets.png)
 
