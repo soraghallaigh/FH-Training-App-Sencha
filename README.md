@@ -18,14 +18,14 @@ You are now setup to begin the tutorial. To begin switch to the v1 branch view o
 ## Links to Tutorial Sections & Tags:
 
 
-* <a href="https://github.com/feedhenry/FH-Training-App-Sencha/tree/v1">Part 1</a> & <a href="https://github.com/feedhenry/FH-Training-App-Sencha/zipball/v1">Finished Code Pt1</a>
-* <a href="https://github.com/feedhenry/FH-Training-App-Sencha/tree/v2">Part 2</a> & <a href="https://github.com/feedhenry/FH-Training-App-Sencha/zipball/v2">Finished Code Pt2</a>
-* <a href="https://github.com/feedhenry/FH-Training-App-Sencha/tree/v3">Part 3</a> & <a href="https://github.com/feedhenry/FH-Training-App-Sencha/zipball/v3">Finished Code Pt3</a>
-* <a href="https://github.com/feedhenry/FH-Training-App-Sencha/tree/v4">Part 4</a> & <a href="https://github.com/feedhenry/FH-Training-App-Sencha/zipball/v4">Finished Code Pt4</a>
-* <a href="https://github.com/feedhenry/FH-Training-App-Sencha/tree/v5">Part 5</a> & <a href="https://github.com/feedhenry/FH-Training-App-Sencha/zipball/v5">Finished Code Pt5</a>
-* <a href="https://github.com/feedhenry/FH-Training-App-Sencha/tree/v6">Part 6</a> & <a href="https://github.com/feedhenry/FH-Training-App-Sencha/zipball/v6">Finished Code Pt6</a>
-* <a href="https://github.com/feedhenry/FH-Training-App-Sencha/tree/v7">Part 7</a> & <a href="https://github.com/feedhenry/FH-Training-App-Sencha/zipball/v7">Finished Code Pt7</a>
-* <a href="https://github.com/feedhenry/FH-Training-App-Sencha/tree/v8">Part 8</a> & <a href="https://github.com/feedhenry/FH-Training-App-Sencha/zipball/v8">Finished Code Pt8</a>
-* <a href="https://github.com/feedhenry/FH-Training-App-Sencha/tree/v9">Part 9</a> & <a href="https://github.com/feedhenry/FH-Training-App-Sencha/zipball/v9">Finished Code Pt9</a>
+* <a href="https://github.com/feedhenry/FH-Training-App-Sencha/tree/v1">Part 1</a> & <a href="https://github.com/feedhenry/FH-Training-App-Sencha/zipball/v1">Finished Code Pt1.zip</a>
+* <a href="https://github.com/feedhenry/FH-Training-App-Sencha/tree/v2">Part 2</a> & <a href="https://github.com/feedhenry/FH-Training-App-Sencha/zipball/v2">Finished Code Pt2.zip</a>
+* <a href="https://github.com/feedhenry/FH-Training-App-Sencha/tree/v3">Part 3</a> & <a href="https://github.com/feedhenry/FH-Training-App-Sencha/zipball/v3">Finished Code Pt3.zip</a>
+* <a href="https://github.com/feedhenry/FH-Training-App-Sencha/tree/v4">Part 4</a> & <a href="https://github.com/feedhenry/FH-Training-App-Sencha/zipball/v4">Finished Code Pt4.zip</a>
+* <a href="https://github.com/feedhenry/FH-Training-App-Sencha/tree/v5">Part 5</a> & <a href="https://github.com/feedhenry/FH-Training-App-Sencha/zipball/v5">Finished Code Pt5.zip</a>
+* <a href="https://github.com/feedhenry/FH-Training-App-Sencha/tree/v6">Part 6</a> & <a href="https://github.com/feedhenry/FH-Training-App-Sencha/zipball/v6">Finished Code Pt6.zip</a>
+* <a href="https://github.com/feedhenry/FH-Training-App-Sencha/tree/v7">Part 7</a> & <a href="https://github.com/feedhenry/FH-Training-App-Sencha/zipball/v7">Finished Code Pt7.zip</a>
+* <a href="https://github.com/feedhenry/FH-Training-App-Sencha/tree/v8">Part 8</a> & <a href="https://github.com/feedhenry/FH-Training-App-Sencha/zipball/v8">Finished Code Pt8.zip</a>
+* <a href="https://github.com/feedhenry/FH-Training-App-Sencha/tree/v9">Part 9</a> & <a href="https://github.com/feedhenry/FH-Training-App-Sencha/zipball/v9">Finished Code Pt9.zip</a>
 
 
