@@ -8,7 +8,7 @@ In this tutorial we will adding a new view for the Google Maps page. You will le
 * Use Sencha controllers
 * Learn to use FeedHenry APIs
 
-![](https://github.com/feedhenry/Training-Demo-App/raw/v3/docs/MapView.png)
+![](https://github.com/feedhenry/FH-Training-App-Sencha/raw/v3/docs/MapView.png)
 
 ## Step 1
 
@@ -22,7 +22,7 @@ In the index.html file before the '<!-- App -->' line add the following code. Th
 In the views directory create a view called 'Map.js' with the following code. This file will create a Sencha map component that will be used in our map view also defined in this file as 'app.views.MapView'.
 	
 	/*
-	 * This creates a map component that will be used to view the map.
+	 * This creates a Sencha map component that will be used to view the map.
 	 */
 	app.views.map = new Ext.Map({
 	  //fullscreen: true,
@@ -38,7 +38,7 @@ In the views directory create a view called 'Map.js' with the following code. Th
 
 	/*
 	 * This is our map view. Notice that it's items contain our 'app.views.map' that we 
-	 * defined ealier.
+	 * defined above.
 	 */
 	app.views.MapView = Ext.extend(Ext.Panel, {
 	  title: 'Map',
@@ -205,7 +205,7 @@ In the controllers directory create a new file called 'Map.js' with the followin
 
 ## Step 4
 
-Now we are going to implement the Cloud features of the FeedHenry platform. You might have noticed in the Map controller we call the FeedHenry $fh.act() call. This allows us to call a function from the server (cloud), read more about this <a href="http://docs.feedhenry.com/api-reference/actions/">here</a>. In the cloud directory add the following code to the main.js file.
+Now we are going to implement the Cloud features of the FeedHenry platform. You might have noticed in the Map controller we call the FeedHenry $fh.act() call. This allows us to call a function from the server (cloud), read more about this <a href="http://docs.feedhenry.com/api-reference/actions/">here</a>. In the cloud directory add the following code to the main.js file. Functions in the Cloud directory can be called from device via an $fh.act() call.
 
 	/*
 	 * Maps
