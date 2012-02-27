@@ -8,7 +8,7 @@ In this tutorial we will be creating the home view
 * Learn about xtype
 * Use CSS to style our Sencha components. 
 
-![](https://github.com/feedhenry/Training-Demo-App/blob/v2/docs/HomeView.png?raw=true)
+![](https://github.com/feedhenry/FH-Training-App-Sencha/blob/v2/docs/HomeView.png?raw=true)
 
 ## Step 1
 
@@ -28,7 +28,7 @@ In the css directory add a file called 'home.css'. This file will override the S
 
 ## Step 2
 
-In the views directory create a view called 'Home.js' with the following code. This will create our Home panel that holds icons.
+In the views directory create a view called 'Home.js' with the following code. This will create our Home panel that holds icons. The code comments below explain what each line is doing.
 
 	app.views.Home = Ext.extend(Ext.Panel, {
 	  title: 'Home',
@@ -65,6 +65,8 @@ In the views directory create a view called 'Home.js' with the following code. T
 
 	  	/* 
 	  	 * Google Maps & Twitter Buttons
+	  	 * We use new Ext.Panel here to create a panel.
+	  	 * Alternatively we could have { xtype: 'panel', height: 100, etc... }
 	  	 */
 	  	new Ext.Panel({
 	  		height: 100,
@@ -122,7 +124,7 @@ and
 
 	<script type="text/javascript" src="app/views/Home.js"></script>
 
-![](https://github.com/feedhenry/Training-Demo-App/blob/v2/docs/HomeView.png?raw=true)
+![](https://github.com/feedhenry/FH-Training-App-Sencha/blob/v2/docs/HomeView.png?raw=true)
 
 ## Extra Task
 
