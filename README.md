@@ -8,7 +8,7 @@ In this tutorial we will adding a new view for credit card validation. This will
 * Learn to use input fields and read from them with Ext.getCmp.
 * Use $ fh.web()
 
-![](https://github.com/feedhenry/Training-Demo-App/raw/v5/docs/creditCard.png)
+![](https://github.com/feedhenry/FH-Training-App-Sencha/raw/v5/docs/creditCard.png)
 
 ## Step 1
 
@@ -106,7 +106,7 @@ Begin by creating the Payment view file in views, name it Payment.js and add the
 
 ## Task
 
-In Step 1 we defined our view, now we must add it to index.html to make Sencha aware it exists. We must also add the Payment view to our Viewport.js and update our Home.js file with an icon for payment and handler to switch to the Payment view. Add these if you have not done so already.
+In Step 1 we defined our view, now we must add it to index.html to make Sencha aware it exists. We must also add the Payment view to our Viewport.js and update our Home.js file with an icon for payment and handler to switch to the Payment view. Add these if you have not done so already. Now try to see if the view works with the references to the controller commented out.
 
 ## Step 2 
 
@@ -182,6 +182,6 @@ The payment function() now needs to be added to our cloud functions in main.js i
 Verify what you have made is working by trying to validate a number sequence such as '0000000000000000'. You should receive the output shown below.
 
 
-![](https://github.com/feedhenry/Training-Demo-App/raw/v5/docs/creditCardCall.png)
+![](https://github.com/feedhenry/FH-Training-App-Sencha/raw/v5/docs/creditCardCall.png)
 
 
