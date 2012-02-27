@@ -7,13 +7,13 @@ This short part of the tutorial will show you how to create a webview within you
 * Initialize a webview using the FeedHenry API
 
 
-![](https://github.com/feedhenry/Training-Demo-App/raw/v7/docs/webView.png)
+![](https://github.com/feedhenry/FH-Training-App-Sencha/raw/v7/docs/webView.png)
 
 ## Step 1
 
 To initialise a webview we will make a call to the necessary FeedHenry API, $fh.webview(). For more information on this API call see <a href="http://docs.feedhenry.com/api-reference/web-view/"> this </a>. As the webview is a seperate component to Sencha we will not need to create a view for it, all we need to do is initialise it with a call when we click the icon.
 
-The code below is used to initialise the webview by clicking on the web icon.
+The code below is used to initialise the webview by clicking on the web icon and should be included in Home.js
 
 		/* Webview & Settings Buttons  */
 	  	new Ext.Panel({
