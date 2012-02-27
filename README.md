@@ -125,7 +125,7 @@ Try to finish out the adding of the Twitter section of the app. This will be sim
 * Update index.html
 * Add the view to Viewport.js
 * A button needs to be added to the homepage and styled with CSS.
-* The button requires a handler with setActiveItem().
+* The button requires a handler with setActiveItem(app.views.ViewName).
 
 
 ## Step 4 
