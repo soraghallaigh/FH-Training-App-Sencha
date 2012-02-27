@@ -23,7 +23,12 @@ First we need to initialize the Sencha Touch framework. This code registers the 
 	Ext.regApplication({
 	  name: 'app',
 	  launch: function() {
-	    this.views.viewport = new this.views.Viewport();
+	  	console.log("App Launched");
+	  	/*
+	  	 * Uncomment the below line once you've written viewport.js
+	  	 * as tasked in Step 2
+	  	 */
+	    //this.views.viewport = new this.views.Viewport();
 	  }
 	});
 
@@ -34,6 +39,8 @@ Now that the Sencha Touch framework is initialized we can create the viewport. C
 	/*
 	 * Add our Viewport to the views namespace. 
 	 * The Viewport is going to be a Panel, a type of Sencha component.
+	 * The viewport will hold our cards (views/pages) that we will switch
+	 * between when using the app.
 	 */
 	app.views.Viewport = Ext.extend(Ext.Panel, {
 	  fullscreen: true,
@@ -68,8 +75,8 @@ Now that the Sencha Touch framework is initialized we can create the viewport. C
 	});
 
 	/*
-	 * This variable will hold a loading spinner (Load Mask). 
-	 * When necessary we can call mask.show() for loading pages.
+	 * This global variable will hold a loading spinner (Load Mask). 
+	 * Where necessary we can call mask.show() for loading pages.
 	 */
 	var mask = new Ext.LoadMask(Ext.getBody(), {
 	  msg: "Loading Data"
