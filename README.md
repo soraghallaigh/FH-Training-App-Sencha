@@ -9,11 +9,11 @@ This part of the tutorial will teach you how to use save and load settings from 
 * Use many types of input fields and components.
 
 
-![](https://github.com/feedhenry/Training-Demo-App/raw/v8/docs/settingsView.png)
+![](https://github.com/feedhenry/FH-Training-App-Sencha/raw/v8/docs/settingsView.png)
 
 ## Step 1
 
-First we develop our controller for settings. The purpose of the controller is to save and load our settings from local storage when the settings view is called. $fh.data has 3 possible parameters for 'act:', these are : remove, save and load. A key is also required because $fh.data() works as a key value pair.
+First we develop our controller for settings. The purpose of the controller is to save and load our settings from local storage when the settings view is called. $fh.data has 3 possible parameters for 'act:', these are : remove, save and load. A key is also required because $fh.data() works on a key value pair.
 
 The code below should be copied into a settings.js file in controllers.
 
@@ -23,14 +23,15 @@ The code below should be copied into a settings.js file in controllers.
 	   */
 	  loadSettings: function() {
 	    /*
-	     * Call a load using fh.data.  
+	     * Call a load using fh.data, we want to load our saved 'settings'.  
 	     */
 	    $fh.data({
 	      act: 'load',
 	      key: 'settings'
 	    }, function(res) {
 	      /*
-	       * If no settings have been saved yet quit this function as none can be loaded
+	       * If no settings have been saved yet quit this function as none can be loaded.
+	       * res.val would contain our settings if they existed
 	       */
 	      if (res.val === null) return;
 
