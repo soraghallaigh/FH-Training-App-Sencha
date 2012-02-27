@@ -2,18 +2,21 @@
 
 ## Overview
 
-In this version of the tutorial we will restructure the app appearance. Instead of using icons to access differernt features of the app we will use a Tab Panel. This is similar to the structure found in most apps. This would usually be a difficult task but with Sencha it is easy. t the end of this tutorial you will know how to;
+In this version of the tutorial we will restructure the app appearance. Instead of using icons to access differernt features of the app we will use a Tab Panel. This is similar to the structure found in most apps. This would usually be a difficult task but with Sencha it is easy. At the end of this tutorial you will know how to;
 
 * Create an App that uses a tab panel view.
 * Add items to a tab panel.
 
-![](https://github.com/feedhenry/Training-Demo-App/raw/v9/docs/tabPanel.png)
+![](https://github.com/feedhenry/FH-Training-App-Sencha/raw/v9/docs/tabPanel.png)
 
 
 ## Step 1 
 
 Begin by modifying the Viewport.js so that we only have Twitter, Map, Payment and Settings views included. As we will be using a Tab Panel we must refelect this by changing the Viewport.js to extend Ext.TabPanel and include a TabBar component.  
 
+	/*
+	 * Now we are extending TabPanel
+	 */
 	app.views.Viewport = Ext.extend(Ext.TabPanel, {
 
 	    /*
@@ -89,4 +92,4 @@ Right now the icons assigned to the different views do not reflect their functio
 
 The app with updated icons.
 
-![](https://github.com/feedhenry/Training-Demo-App/raw/v9/docs/tabPanelIcons.png)
+![](https://github.com/feedhenry/FH-Training-App-Sencha/raw/v9/docs/tabPanelIcons.png)
