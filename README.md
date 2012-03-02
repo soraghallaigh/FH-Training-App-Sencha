@@ -130,3 +130,4 @@ and
 
 Try and add some extra icons to the home screen, some sample images are provided in the images/icons directory. Add the necessary Twitter icon as shown in the image at the beggining of this tutorial. This will require extra CSS rules.
 
+<a href="https://github.com/feedhenry/FH-Training-App-Sencha/zipball/v3">Finished Code Pt2.zip</a>
