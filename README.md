@@ -1,6 +1,8 @@
-# FeedHenry Sencha Tutorial - v5
+# FeedHenry Sencha Tutorial - Part 5
 
 ## Overview
+
+'git checkout v4' to get the starting code for this tutorial.
 
 In this tutorial we will adding a new view for credit card validation. This will demonstrate the use of input fields and web requests using $fh.web().
 
@@ -184,4 +186,4 @@ Verify what you have made is working by trying to validate a number sequence suc
 
 ![](https://github.com/feedhenry/FH-Training-App-Sencha/raw/v5/docs/creditCardCall.png)
 
-<a href="https://github.com/feedhenry/FH-Training-App-Sencha/zipball/v6">Finished Code Pt5.zip</a>
+'git checkout v5' to get the completed code for this section which is also the starting point for the next section.
