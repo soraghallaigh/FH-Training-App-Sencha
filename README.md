@@ -28,6 +28,6 @@ You are now setup to begin the tutorial. To begin switch to the v1 branch view o
 * <a href="https://github.com/feedhenry/FH-Training-App-Sencha/tree/v6">Part 6</a> & <a href="https://github.com/feedhenry/FH-Training-App-Sencha/zipball/v6">Finished Code Pt5.zip</a>
 * <a href="https://github.com/feedhenry/FH-Training-App-Sencha/tree/v7">Part 7</a> & <a href="https://github.com/feedhenry/FH-Training-App-Sencha/zipball/v7">Finished Code Pt6.zip</a>
 * <a href="https://github.com/feedhenry/FH-Training-App-Sencha/tree/v8">Part 8</a> & <a href="https://github.com/feedhenry/FH-Training-App-Sencha/zipball/v8">Finished Code Pt7.zip</a>
-* <a href="https://github.com/feedhenry/FH-Training-App-Sencha/tree/v9">Part 9</a> & <a href="https://github.com/feedhenry/FH-Training-App-Sencha/zipball/v9">Finished Code Pt8.zip</a>
+* <a href="https://github.com/feedhenry/FH-Training-App-Sencha/tree/v9">Part 9</a> & <a href="https://github.com/feedhenry/FH-Training-App-Sencha/zipball/v8">Finished Code Pt8.zip</a>
 
 
