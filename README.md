@@ -183,3 +183,5 @@ Remember to add the camera view to Viewport.js which should appear as follows:
 	var mask = new Ext.LoadMask(Ext.getBody(), {
 	  msg: "Loading Data"
 	});
+
+<a href="https://github.com/feedhenry/FH-Training-App-Sencha/zipball/v7">Finished Code Pt6.zip</a>
