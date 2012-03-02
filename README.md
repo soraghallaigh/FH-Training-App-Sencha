@@ -360,4 +360,4 @@ In the 'main.js' file found in the cloud directory, find the following code snip
 
 Changes the longitude and latitude values and then view the map page. The markers on the page should now be located in a new position.
 
-'git checkout v3' to get the finished code for this section and the starting code for the <a href="https://github.com/feedhenry/FH-Training-App-Sencha/tree/v3">next section.</a>
+'git checkout v3' or click <a href="https://github.com/feedhenry/FH-Training-App-Sencha/zipball/v3">here</a> to get the finished code for this section and the starting code for the <a href="https://github.com/feedhenry/FH-Training-App-Sencha/tree/v3">next section.</a>
