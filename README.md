@@ -186,4 +186,4 @@ Verify what you have made is working by trying to validate a number sequence suc
 
 ![](https://github.com/feedhenry/FH-Training-App-Sencha/raw/v5/docs/creditCardCall.png)
 
-'git checkout v5' to get the completed code for this section which is also the starting point for the <a href="https://github.com/feedhenry/FH-Training-App-Sencha/tree/v5>"next section.</a>
+'git checkout v5' to get the completed code for this section which is also the starting point for the <a href="https://github.com/feedhenry/FH-Training-App-Sencha/tree/v5">next section.</a>
