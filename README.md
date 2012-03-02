@@ -1,6 +1,8 @@
-# FeedHenry Sencha Tutorial - v7
+# FeedHenry Sencha Tutorial - Part 7
 
 ## Overview
+
+'git checkout v6' to get the starting code for this section.
 
 This short part of the tutorial will show you how to create a webview within your app. Doing this requires use of the $fh.webview() API call. At the end of this tutorial you will know how to.
 
@@ -61,4 +63,4 @@ The code below is used to initialise the webview by clicking on the web icon and
 		    ]
 	  	}),
 	  	
-<a href="https://github.com/feedhenry/FH-Training-App-Sencha/zipball/v8">Finished Code Pt7.zip</a>
+'git checkout v7' to get the completed code foir this section which is also the starting point for the <a href="https://github.com/feedhenry/FH-Training-App-Sencha/tree/v7">next section.</a>
