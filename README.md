@@ -1,6 +1,8 @@
-# FeedHenry Sencha Tutorial - v4
+# FeedHenry Sencha Tutorial - Part 4
 
 ## Overview
+
+'git checkout v3' to get the starting code for this tutorial
 
 In this tutorial we will adding a new view for a Twitter feed page. You will learn to use stores, models and further use of FeedHenry APIs.
 
@@ -170,4 +172,4 @@ Home.js also needs to be updated. If you haven't added a Twitter button do so no
 
 ![](https://github.com/feedhenry/FH-Training-App-Sencha/raw/v4/docs/tweets.png)
 
-<a href="https://github.com/feedhenry/FH-Training-App-Sencha/zipball/v5">Finished Code Pt4.zip</a>
+'git checkout v4' to get the completed code for this sectio which is the starting point for the next section.
