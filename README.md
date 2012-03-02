@@ -105,3 +105,5 @@ Inside the items array add the following code;
 If you open your index.html page you will now see the following;
 
 ![](https://github.com/feedhenry/FH-Training-App-Sencha/raw/v1/docs/TestView.png)
+
+<a href="https://github.com/feedhenry/FH-Training-App-Sencha/zipball/v2">Finished Code Pt1.zip</a>
