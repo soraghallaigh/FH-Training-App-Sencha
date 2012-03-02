@@ -1,4 +1,4 @@
-# FeedHenry Sencha Tutorial - Part 8
+# FeedHenry Sencha Tutorial - Part 9
 
 ## Overview
 
