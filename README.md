@@ -1,6 +1,8 @@
-# FeedHenry Sencha Tutorial - v6
+# FeedHenry Sencha Tutorial - Part 6
 
 ## Overview
+
+'git checkout v5' to get the starting point for this section.
 
 For this part of the tutorial we will create a view with access to the camera. The FeedHenry Camera API, $fh.cam(), is used to do this.
 
@@ -184,4 +186,4 @@ Remember to add the camera view to Viewport.js which should appear as follows:
 	  msg: "Loading Data"
 	});
 
-<a href="https://github.com/feedhenry/FH-Training-App-Sencha/zipball/v7">Finished Code Pt6.zip</a>
+'git checkout v6' to get the finished code for this section and starting point for the <a href="https://github.com/feedhenry/FH-Training-App-Sencha/tree/v6">next section.</a>
