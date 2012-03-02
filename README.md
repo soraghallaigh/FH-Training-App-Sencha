@@ -339,4 +339,4 @@ All that is left to do now is update our Viewport.js file. We need to include th
 	  msg: "Loading Data"
 	});
 
-'git checkout v8' to get the finished code for this section which is also the starting point for the <a href="https://github.com/feedhenry/FH-Training-App-Sencha/tree/v8">next section</a>
+'git checkout v8' or click <a href="https://github.com/feedhenry/FH-Training-App-Sencha/zipball/v8">here</a> to get the finished code for this section which is also the starting point for the <a href="https://github.com/feedhenry/FH-Training-App-Sencha/tree/v8">next section</a>
