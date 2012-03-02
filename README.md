@@ -1,6 +1,8 @@
-# FeedHenry Sencha Tutorial - v8
+# FeedHenry Sencha Tutorial - Part 8
 
 ## Overview
+
+'git checkout v7' to get the starting code for this section.
 
 This part of the tutorial will teach you how to use save and load settings from the device local storage using the $fh.data() API call. More information on this API call can be found <a href="http://docs.feedhenry.com/api-reference/local-storage/">here</a>. After completing this tutorial you will be able to.
 
@@ -337,4 +339,4 @@ All that is left to do now is update our Viewport.js file. We need to include th
 	  msg: "Loading Data"
 	});
 
-<a href="https://github.com/feedhenry/FH-Training-App-Sencha/zipball/v8">Finished Code Pt8.zip</a>
+'git checkout v8' to get the finished code for this section which is also the starting point for the <a href="https://github.com/feedhenry/FH-Training-App-Sencha/tree/v8">next section</a>
