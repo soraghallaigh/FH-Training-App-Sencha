@@ -1,6 +1,8 @@
-# FeedHenry Sencha Tutorial - v3
+# FeedHenry Sencha Tutorial - Part 3
 
 ## Overview
+
+'git checkout v2' to get the starting code for this tutorial.
 
 In this tutorial we will adding a new view for the Google Maps page. You will learn the following:
 
@@ -358,4 +360,4 @@ In the 'main.js' file found in the cloud directory, find the following code snip
 
 Changes the longitude and latitude values and then view the map page. The markers on the page should now be located in a new position.
 
-<a href="https://github.com/feedhenry/FH-Training-App-Sencha/zipball/v4">Finished Code Pt3.zip</a>
+'git checkout v3' to get the finished code for this section and the starting code for the next section.
