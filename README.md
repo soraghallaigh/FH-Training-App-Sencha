@@ -12,10 +12,10 @@ To begin this tutorial download the boilerplate code from <a href="https://githu
 
 git@github.com:feedhenry/FH-Training-App-Sencha.git.
 
-  cd my-workspace-folder
-  git clone git@github.com:feedhenry/FH-Training-App-Sencha.git.
-  cd FH-Training-App-Sencha
-  git checkout boilerplate
+    cd my-workspace-folder
+    git clone git@github.com:feedhenry/FH-Training-App-Sencha.git.
+    cd FH-Training-App-Sencha
+    git checkout boilerplate
 
 This represents our basic file structure for the entire tutorial.
 
