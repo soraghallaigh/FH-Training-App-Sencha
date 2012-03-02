@@ -96,4 +96,4 @@ The app with updated icons.
 
 ![](https://github.com/feedhenry/FH-Training-App-Sencha/raw/v9/docs/tabPanelIcons.png)
 
-'git checkout v9' to get the completed code for this section. 
+'git checkout v9' or click <a href="https://github.com/feedhenry/FH-Training-App-Sencha/zipball/v9">here</a> to get the completed code for this section. 
