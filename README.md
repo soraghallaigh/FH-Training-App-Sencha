@@ -186,4 +186,4 @@ Remember to add the camera view to Viewport.js which should appear as follows:
 	  msg: "Loading Data"
 	});
 
-'git checkout v6' to get the finished code for this section and starting point for the <a href="https://github.com/feedhenry/FH-Training-App-Sencha/tree/v6">next section.</a>
+'git checkout v6' or click <a href="https://github.com/feedhenry/FH-Training-App-Sencha/zipball/v6">here</a> to get the finished code for this section and starting point for the <a href="https://github.com/feedhenry/FH-Training-App-Sencha/tree/v6">next section.</a>
