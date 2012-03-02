@@ -1,6 +1,8 @@
-# FeedHenry Sencha Tutorial - v1
+# FeedHenry Sencha Tutorial - Part 1
 
 ## Overview
+
+To get the starting point for this section 'git checkout boilerplate'.
 
 In this tutorial we will be creating the basic structure of the app. At the end of this tutorial you will know how to:
 
