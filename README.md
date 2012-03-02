@@ -1,4 +1,4 @@
-# FeedHenry Sencha Tutorial
+# FeedHenry Sencha Tutorial - v1
 
 ## Overview
 
