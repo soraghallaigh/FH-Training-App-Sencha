@@ -172,4 +172,4 @@ Home.js also needs to be updated. If you haven't added a Twitter button do so no
 
 ![](https://github.com/feedhenry/FH-Training-App-Sencha/raw/v4/docs/tweets.png)
 
-'git checkout v4' to get the completed code for this sectio which is the starting point for the next section.
+'git checkout v4' to get the completed code for this section which is the starting point for the <a href="https://github.com/feedhenry/FH-Training-App-Sencha/tree/v4">next section</a>.
