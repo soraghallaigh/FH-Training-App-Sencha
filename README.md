@@ -108,4 +108,4 @@ If you open your index.html page you will now see the following;
 
 ![](https://github.com/feedhenry/FH-Training-App-Sencha/raw/v1/docs/TestView.png)
 
-To get the finished code for this section and the start for part 2 'git checkout v1'
+To get the finished code for this section and the start for <a href="https://github.com/feedhenry/FH-Training-App-Sencha/tree/v1"part 2 </a>'git checkout v1'
