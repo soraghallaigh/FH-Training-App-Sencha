@@ -1,173 +1,187 @@
-# FeedHenry Sencha Tutorial - v4
+# FeedHenry Sencha Tutorial - v5
 
 ## Overview
 
-In this tutorial we will adding a new view for a Twitter feed page. You will learn to use stores, models and further use of FeedHenry APIs.
+In this tutorial we will adding a new view for credit card validation. This will demonstrate the use of input fields and web requests using $fh.web().
 
-* Integrate an app with Twitter to pull tweets with a specified user name.
-* Learn about Sencha stores and models.
-* Use the $fh.web() function to make a web request for your app.
+* Integrate an app with a Credit Card validation service 'CCChecker'.
+* Learn to use input fields and read from them with Ext.getCmp.
+* Use $ fh.web()
 
-![](https://github.com/feedhenry/FH-Training-App-Sencha/raw/v4/docs/twitterView.png)
+![](https://github.com/feedhenry/FH-Training-App-Sencha/raw/v5/docs/creditCard.png)
 
 ## Step 1
 
-Begin by creating the Twitter view file in views, name it Twitter.js and add the following code. This view uses a new layout type, 'vbox' which is used to stack elements vertically. We also will use the Sencha 'List' component to display tweets.
+Begin by creating the Payment view file in views, name it Payment.js and add the following code. New components are introduced here. Namely the 'form', 'textfield', 'selectfield' and 'fieldset'. 
 	
-	  app.views.Twitter = Ext.extend(Ext.Panel, {
-	  title: 'Twitter',
-	  iconCls: 'time',
-	  width: '100%',
-	  /*
-	   * Layout vbox is used to arrnage items (tweets) stacked above one another
-	   */
-	  layout: {
-	    type: 'vbox'
-	  },
+	  app.views.Payment = Ext.extend(Ext.Panel, {
+	  title: 'Payment',
+	  iconCls: 'home',
+	  layout: 'fit',
 
 	  listeners: {
-	  	show: function() {
-
-	  	}
+	    beforeshow: function() {
+	    },
 	  },
 
 	  dockedItems: [
-	    {
-	      dock: 'top',
-	      xtype: 'toolbar',
+	  	{
+	  		dock: 'top',
+	  		xtype: 'toolbar',
 	      title: '<img class="logo logoOffset" src="app/images/logo.png" />',
-	      items: [
-	        {
-	          text: 'Back',
+	  		items: [
+	  			{
+	  				text: 'Back',
 	          ui: 'back',
 	          hidden: app.hideBack || false,
+	  				handler: function() {
+	  					app.views.viewport.setActiveItem(app.views.home, {type: 'slide', direction: 'right'});
+	  				}
+	  			}
+	  		]
+	  	}
+	  ],
+	  
+	  /*
+	   * Create the form within which we create input fields.
+	   */
+	  items: [
+	    {
+	      xtype: 'form',
+	      items: [
+	        {
+	          // The fieldset is used to hold fields as items. 
+	          // The main purpose of the fieldset is to add a title and to group fields.
+	          xtype: 'fieldset',
+	          title: 'Payment Info',
+	          instructions: 'Please enter the payment information above.',
+	          defaults: {
+	            labelAlign: 'left',
+	            labelWidth: '50%'
+	          },
+	          /*
+	           * This selectfield creates a drop menu that holds the options defined.
+	           * These options can optionally be defined in a store instead of locally. 
+	           */
+	          items: [
+	            {
+	              xtype: 'selectfield',
+	              id: 'cardtype',
+	              name: 'cardtype',
+	              label: 'Card Type',
+	              options: [{
+	                text: 'Visa',
+	                value: 'visa'
+	              }, {
+	                text: 'Mastercard',
+	                value: 'mastercard'
+	              }]
+	            },
+	            {
+	              xtype: 'textfield',
+	              id: 'cardnumber',
+	              name: 'cardnumber',
+	              label: 'Card Number'
+	            },
+	          ]
+	        },
+	        /* 
+	         * This button calls out to our controller. 
+	         * The 'action' parameter specifies which function to call in the controller.
+	         */
+	        {
+	          xtype: 'button',
+	          text: 'Validate Card Number',
 	          handler: function() {
-	            app.views.viewport.setActiveItem(app.views.home, {type: 'slide', direction: 'right'});
+	            Ext.dispatch({
+	              controller: app.controllers.payment,
+	              action: 'processPayment'
+	            });
 	          }
 	        }
 	      ]
 	    }
-	  ],
-	  
-	  /*
-	   * Below we declare a list. It's store is set to our twitter store. 
-	   * This store is defined in another file. 
-	   * The itemTpl is a template that defines how list items are styled.
-	   * Anything in the tpl surrounded by {} means that the store 
-	   * contains this variable and to populate this list item using that data.
-	   */
-	  items: [
-	    {
-	      xtype: 'list',
-	      width: '100%',
-	      store: app.stores.twitter,
-	      itemTpl: '<img style="float: left; margin: 0px 8px 8px 0px;" src="{profile_image_url}" />' + 
-	      '<strong>{from_user}</strong>' +
-	      '{text}',
-	      flex: 1,
-	      plugins: [{
-	        ptype: 'pullrefresh'
-	      }]
-	    }
 	  ]
-	  });
-
-## Step 2
-
-You will have seen from Step 1 that we added a list component to the Twitter view. This list is using a store, app.stores.twitter. We must define this store. In the models folder create a file called Twitter.js and add the code below. In this code we define a proxy for the model. The proxy is used to control loading and saving data to the store. The proxy here relies on a FeedHenry API call $fh.act(). The data format is JSON and the function name is 'getTweets'. The device will use $fh.act() to call the funtion from the Cloud. The function is defined in main.js file under the cloud directory. 
-	
-
-	/*
- 	 * Here we create a model using regModel. 
- 	 * The model will be used by a store as a template for it's data format.
- 	 * See that the fields here correspond to data the itemTpl will need.
- 	 */
-	app.models.Twitter = Ext.regModel('app.models.Twitter', {
-	  fields: ['from_user', 'text', 'profile_image_url', 'from_user_name'],
-	  proxy: {
-	    type: 'fhact',
-	    reader: 'json',
-	    id: 'getTweets'
-	  }
 	});
-
-	/*
-	 * Create the Twitter store for tweets using the above model. 
-	 * The store is empty, but will be populated using the model proxy.
-	 */
-	app.stores.twitter = new Ext.data.Store({
-	  model: 'app.models.Twitter',
-	  autoLoad: true,
-	});
-
-## Step 3 
-
-To populate our store with tweets we add the following function to the main.js file in our cloud directory. The app.stores.twitter using the app.models.Twitter will invoke this call to populate the list automatically due to it's proxy. 
-
-	function getTweets() {
-	  var username   = 'feedhenry';
-	  var num_tweets = 10;
-	  var url        = 'http://search.twitter.com/search.json?q=' + username;
-
-	  var response = $fh.web({
-	    url: url,
-	    method: 'GET',
-	    allowSelfSignedCert: true
-	  });
-	  return {'data': $fh.parse(response.body).results};
-	}
-
 
 ## Task
 
-Try to finish out the adding of the Twitter section of the app. This will be similar to adding our Map view from v3. Remember the steps invloved:
+In Step 1 we defined our view, now we must add it to index.html to make Sencha aware it exists. We must also add the Payment view to our Viewport.js and update our Home.js file with an icon for payment and handler to switch to the Payment view. Add these if you have not done so already. Now try to see if the view works with the references to the controller commented out.
 
-* Update index.html
-* Add the view to Viewport.js
-* A button needs to be added to the homepage and styled with CSS.
-* The button requires a handler with setActiveItem(app.views.ViewName).
+## Step 2 
 
+Now that our views have been created we need to add in the necessary controllers for the functionality of the Payments section. The controller is added to app.controllers and instantiated using Ext.Controller. The controller relies on a cloud call which are done using $fh.act(). The function called from the cloud is payment() as specified by 'act: payment'.
 
-## Step 4 
+	app.controllers.payment = new Ext.Controller({
 
-These steps are needed if you have not finished adding the Twitter page. Make sure to update index.html to include the new files we have made. Add the following line under our app.js include.
+	  /*
+	   * Check if a credit card number if valid
+	   */
+	  processPayment: function() {
+	    /*
+	     * Ext.getCmp will get a component via it's id. 
+	     * In this case we get our credit card view fields and their values(getValue())
+	     */
+	    var cardType   = Ext.getCmp("cardtype").getValue();
+	    var cardNumber = Ext.getCmp("cardnumber").getValue();
 
-	<!-- Models -->
-	<script type="text/javascript" src="app/models/Twitter.js"></script> 
+	    if (cardNumber.length !== 16) {
+	      Ext.Msg.alert('Error', 'Card number must be 16 digits.', Ext.emptyFn);
+	      return;
+	    }
+	    
+	    // Show loading spinner
+	    mask.show();
 
-And add the following line under our <!-- Views --> tag.
+	    // Call to the cloud (main.js in the cloud directory) to run payment() function.
+	    $fh.act({
+	      act: 'payment',
+	      req: {
+	        cardType: cardType,
+	        cardNumber: cardNumber
+	      }
+	    }, function(res) {
+	      alert(JSON.stringify(res));
+	      console.log(res);
 
-	<script type="text/javascript" src="app/views/Twitter.js"></script>
+	      var regEx  = new RegExp("<\s*string[^>]*>(.*?)<\s*/\s*string>", "g");
+	      var result = regEx.exec(res.body)[1];
 
-Viewport.js now needs to be updated to include our Twitter view. Insert the following code to do this. 
-	
-	initComponent: function() {
-	    // Put instances of cards into app.views namespace
-	    Ext.apply(app.views, {
-	      home:     new app.views.Home(),
-	      map:      new app.views.MapView(),
-	      twitter:  new app.views.Twitter()
+	      // Hide loading spinner
+	      mask.hide();
+
+	      // Empty the credit card field
+	      Ext.getCmp("cardnumber").setValue();
+
+	      Ext.Msg.alert('Response', result, Ext.emptyFn);
 	    });
-	    //put instances of cards into viewport
-	    Ext.apply(this, {
-	      items: [
-	        app.views.home,
-	        app.views.map,
-	        app.views.twitter
-	      ]
-	    });
-	    app.views.Viewport.superclass.initComponent.apply(this, arguments);
-	 }
+	  }
 
-## Step 5
+	});
 
-Home.js also needs to be updated. If you haven't added a Twitter button do so now and add the following handler function to it. 
+## Step 3
 
-	handler: function() {
-			  	app.views.viewport.setActiveItem(app.views.twitter, {type: 'slide', direction: 'left'});
-			  }
+The payment function() now needs to be added to our cloud functions in main.js in the cloud directory. This function will perform a web request ($fh.web) to the URL specified with the parameters provided by our $fh.act call in app.controllers.payment. 
+
+	/*
+	 * Payment
+	 */ 
+	function payment() {
+	  var cardType   = $params.cardType;
+	  var cardNumber = $params.cardNumber;
+	  var url = "http://www.webservicex.net/CreditCard.asmx/ValidateCardNumber?cardType=" + cardType + "&cardNumber=" + cardNumber;
+
+	  return $fh.web({
+	    url: url,
+	    method: 'GET'
+	  });
+	}
+
+## Task
+
+Verify what you have made is working by trying to validate a number sequence such as '0000000000000000'. You should receive the output shown below.
 
 
-![](https://github.com/feedhenry/FH-Training-App-Sencha/raw/v4/docs/tweets.png)
+![](https://github.com/feedhenry/FH-Training-App-Sencha/raw/v5/docs/creditCardCall.png)
 
-<a href="https://github.com/feedhenry/FH-Training-App-Sencha/zipball/v5">Finished Code Pt4.zip</a>
+<a href="https://github.com/feedhenry/FH-Training-App-Sencha/zipball/v6">Finished Code Pt5.zip</a>
