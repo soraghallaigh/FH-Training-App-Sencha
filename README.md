@@ -1,6 +1,8 @@
-# FeedHenry Sencha Tutorial - v2
+# FeedHenry Sencha Tutorial - Part 2
 
 ## Overview
+
+The starting point for this section can be obtained by using 'git checkout v1'
 
 In this tutorial we will be creating the home view
 
@@ -130,4 +132,4 @@ and
 
 Try and add some extra icons to the home screen, some sample images are provided in the images/icons directory. Add the necessary Twitter icon as shown in the image at the beggining of this tutorial. This will require extra CSS rules.
 
-<a href="https://github.com/feedhenry/FH-Training-App-Sencha/zipball/v3">Finished Code Pt2.zip</a>
+git checkout v2 to get the completed code for this section and the starting point for <a href="https://github.com/feedhenry/FH-Training-App-Sencha/tree/v2">part 3.</a>
