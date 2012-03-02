@@ -170,3 +170,4 @@ Home.js also needs to be updated. If you haven't added a Twitter button do so no
 
 ![](https://github.com/feedhenry/FH-Training-App-Sencha/raw/v4/docs/tweets.png)
 
+<a href="https://github.com/feedhenry/FH-Training-App-Sencha/zipball/v5">Finished Code Pt4.zip</a>
